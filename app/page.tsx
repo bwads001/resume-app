@@ -31,7 +31,7 @@ export default function Home() {
       <div className="mt-8">
         <Snippet hideCopyButton hideSymbol variant="bordered">
           <span>
-            Using NextUI to handle UI components makes it easy to look good.{" "}
+            I'm building a new resume app. Just getting started.
             <Code color="primary">nextui init -t app</Code>
           </span>
         </Snippet>
