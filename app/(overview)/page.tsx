@@ -30,7 +30,7 @@ export default async function Home() {
       </div>
 
       <div className="flex flex-col gap-4 max-w-7xl">
-        {experiences.toReversed().map((experience) => (
+        {experiences.reverse().map((experience) => (
           <Snippet
             key={experience.id}
             hideCopyButton
