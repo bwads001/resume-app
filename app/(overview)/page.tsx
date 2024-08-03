@@ -24,27 +24,25 @@ export default async function Home() {
           className={buttonStyles({ variant: "bordered", radius: "full" })}
           href={siteConfig.links.github}
         >
-          <GithubIcon size={20} />
+          <GithubIcon size={24} />
           GitHub
         </Link>
       </div>
 
       <div className="flex flex-col gap-4 max-w-7xl">
-        {experiences.map((experience) => (
+        {experiences.toReversed().map((experience) => (
           <Snippet
             key={experience.id}
             hideCopyButton
             hideSymbol
-            className="flex col-auto p-4"
+            className="flex p-4"
             variant="bordered"
           >
-            <div className="flex flex-col">
-              <h3 className="text-lg">{experience.position}</h3>
-              <h4 className="text-xl text-primary-600">{experience.company}</h4>
-              <p className="text-xs text-foreground-500">
-                {experience.startDate} - {experience.endDate}
-              </p>
-            </div>
+            <h3 className="text-lg">{experience.position}</h3>
+            <h4 className="text-xl text-primary-600">{experience.company}</h4>
+            <p className="text-xs text-foreground-500">
+              {experience.startDate} - {experience.endDate}
+            </p>
             <hr />
             <div className="flex text-wrap mt-2">{experience.experience}</div>
           </Snippet>
