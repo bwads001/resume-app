@@ -18,17 +18,6 @@ export default async function Home() {
         <h2 className={subtitle({ class: "mt-4" })}>{user.about}</h2>
       </div>
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={24} />
-          GitHub
-        </Link>
-      </div>
-
       <div className="flex flex-col gap-4 max-w-7xl">
         {experiences.reverse().map((experience) => (
           <Snippet
@@ -47,6 +36,16 @@ export default async function Home() {
             <div className="flex text-wrap mt-2">{experience.experience}</div>
           </Snippet>
         ))}
+      </div>
+      <div className="flex gap-3">
+        <Link
+          isExternal
+          className={buttonStyles({ variant: "bordered", radius: "full" })}
+          href={siteConfig.links.github}
+        >
+          <GithubIcon size={24} />
+          GitHub
+        </Link>
       </div>
     </section>
   );
