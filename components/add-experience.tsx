@@ -5,7 +5,7 @@ import { useFormState } from "react-dom";
 
 import { createExperience } from "@/app/lib/actions";
 
-export function AddExperience() {
+export async function AddExperience() {
   const [error, action, isPending] = useFormState(createExperience, null);
 
   return (
