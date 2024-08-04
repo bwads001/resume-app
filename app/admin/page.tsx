@@ -1,8 +1,21 @@
+import { auth } from "@/auth";
 import { AddExperience } from "@/components/add-experience";
 import { subtitle, title } from "@/components/primitives";
+import { SignIn } from "@/components/sign-in";
+import { SignOut } from "@/components/sign-out";
 import { WorkExperience } from "@/components/work-experience";
 
 export default async function AdminPage() {
+  const session = await auth();
+
+  if (!session) {
+    return (
+      <div>
+        <SignIn />
+      </div>
+    );
+  }
+
   return (
     <div>
       <h1 className={title()}>Admin</h1>
@@ -12,6 +25,8 @@ export default async function AdminPage() {
         <AddExperience />
         <WorkExperience />
       </div>
+
+      <SignOut />
     </div>
   );
 }
