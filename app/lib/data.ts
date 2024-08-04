@@ -1,3 +1,4 @@
+"use server";
 import { like } from "drizzle-orm";
 
 import { usersTable } from "./db/schema";

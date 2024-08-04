@@ -9,9 +9,7 @@ export default async function AdminPage() {
       <h2 className={subtitle({ class: "mt-4" })}>Add Experience</h2>
       <br />
       <div className="flex flex-row gap-1">
-        {/* @ts-expect-error Async Server Component */}
         <AddExperience />
-        {/* @ts-expect-error Async Server Component */}
         <WorkExperience />
       </div>
     </div>

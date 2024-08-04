@@ -17,7 +17,6 @@ export default async function Home() {
         <h2 className={subtitle({ class: "mt-4" })}>{user.about}</h2>
       </div>
       <div className="flex flex-col gap-4 max-w-7xl">
-        {/* @ts-expect-error Async Server Component */}
         <WorkExperience />
       </div>
       <div className="flex gap-3">
