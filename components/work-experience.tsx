@@ -1,28 +1,25 @@
-import { Snippet } from "@nextui-org/snippet";
-
 import { experienceList } from "@/app/lib/data";
 
 export async function WorkExperience() {
   const experiences = await experienceList();
 
   return (
-    <div>
+    <div className="flex flex-col gap-2 basis-3/5 max-w-3xl">
       {experiences.reverse().map((experience) => (
-        <Snippet
+        <div
           key={experience.id}
-          hideCopyButton
-          hideSymbol
-          className="flex p-4"
-          variant="bordered"
+          className="flex flex-col p-4 rounded-xl border-1 font-sans"
         >
           <h3 className="text-lg">{experience.position}</h3>
           <h4 className="text-xl text-primary-600">{experience.company}</h4>
-          <p className="text-xs text-foreground-500">
+          <p className="text-xs text-foreground-500 mb-1">
             {experience.startDate} - {experience.endDate}
           </p>
           <hr />
-          <div className="flex text-wrap mt-2">{experience.experience}</div>
-        </Snippet>
+          <div className="flex text-wrap mt-2 w-full text-md">
+            {experience.experience}
+          </div>
+        </div>
       ))}
     </div>
   );
