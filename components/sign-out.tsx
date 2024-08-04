@@ -1,3 +1,5 @@
+import { Button } from "@nextui-org/button";
+
 import { signOut } from "@/auth";
 
 export function SignOut() {
@@ -8,7 +10,7 @@ export function SignOut() {
         await signOut();
       }}
     >
-      <button type="submit">Sign Out</button>
+      <Button type="submit">Sign Out</Button>
     </form>
   );
 }

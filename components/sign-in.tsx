@@ -1,3 +1,5 @@
+import { Button } from "@nextui-org/button";
+
 import { signIn } from "@/auth";
 
 export function SignIn() {
@@ -8,7 +10,7 @@ export function SignIn() {
         await signIn("github");
       }}
     >
-      <button type="submit">Signin with GitHub</button>
+      <Button type="submit">Signin with GitHub</Button>
     </form>
   );
 }

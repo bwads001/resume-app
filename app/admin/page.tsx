@@ -25,6 +25,7 @@ export default async function AdminPage() {
         <AddExperience />
         <WorkExperience />
       </div>
+      <div>{JSON.stringify(session)}</div>
 
       <SignOut />
     </div>
