@@ -2,7 +2,7 @@ import { like } from "drizzle-orm";
 
 import { usersTable } from "./db/schema";
 
-import { db } from "@/lib/db";
+import { db } from "@/app/lib/db";
 
 export async function userInfo(username: string) {
   try {

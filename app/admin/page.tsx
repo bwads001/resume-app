@@ -1,5 +1,7 @@
+import { experienceList, userInfo } from "@/app/lib/data";
+import { AddExperience } from "@/components/add-experience";
 import { subtitle, title } from "@/components/primitives";
-import { experienceList, userInfo } from "@/lib/data";
+import { Key } from "react";
 
 export default async function AdminPage() {
   const user = await userInfo("Bryan Wadsworth");
@@ -11,22 +13,18 @@ export default async function AdminPage() {
       <h2 className={subtitle({ class: "mt-4" })}>{user.about}</h2>
       <br />
       <div>
-        {experiences.map((experience) => (
-          <div
-            key={experience.id}
-            className="flex col-auto border-b border-gray-100 pb-4 gap-4"
-          >
-            <div className="flex width-2/5 items-center justify-between gap-8">
-              <h2>{experience.company}</h2>
-              <h3>{experience.position}</h3>
-              <span>
-                {experience.startDate} - {experience.endDate}
-              </span>
-            </div>
-            <div className="flex width-3/5">{experience.experience}</div>
+        {experiences.reverse().map((experience: { id: Key; position: string; company: string; startDate: string; endDate: string; }) => (
+          <div key={experience.id}>
+            <h3>{experience.position}</h3>
+            <h4>{experience.company}</h4>
+            <p>
+              {experience.startDate} - {experience.endDate}
+            </p>
+            <hr />
           </div>
         ))}
       </div>
+      <AddExperience />
     </div>
   );
 }
