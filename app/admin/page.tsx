@@ -8,7 +8,7 @@ import { WorkExperience } from "@/components/work-experience";
 export default async function AdminPage() {
   const session = await auth();
 
-  if (!session) {
+  if (!session?.user) {
     return (
       <div>
         <SignIn />
