@@ -9,7 +9,7 @@ export async function AddExperience() {
   const [error, action, isPending] = useFormState(createExperience, null);
 
   return (
-    <div className="flex flex-col bg-content3 p-4 basis-2/5 rounded-lg">
+    <div className="flex flex-col bg-content3 p-4 basis-2/5 rounded-lg h-1/3">
       <form action={action}>
         <label className="my-1 block text-sm font-medium" htmlFor="position">
           Position

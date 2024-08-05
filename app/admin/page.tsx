@@ -1,19 +1,15 @@
+import { redirect } from "next/navigation";
+
 import { auth } from "@/auth";
 import { AddExperience } from "@/components/add-experience";
 import { subtitle, title } from "@/components/primitives";
-import { SignIn } from "@/components/sign-in";
 import { SignOut } from "@/components/sign-out";
 import { WorkExperience } from "@/components/work-experience";
-
 export default async function AdminPage() {
   const session = await auth();
 
   if (!session?.user) {
-    return (
-      <div>
-        <SignIn />
-      </div>
-    );
+    redirect("/api/auth/signin");
   }
 
   return (
@@ -25,8 +21,6 @@ export default async function AdminPage() {
         <AddExperience />
         <WorkExperience />
       </div>
-      <div>{JSON.stringify(session)}</div>
-
       <SignOut />
     </div>
   );

@@ -1,5 +1,6 @@
 "use server";
 
+import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
@@ -60,6 +61,15 @@ export async function createExperience(previousState: any, formData: FormData) {
     });
   } catch (error) {
     return "Database Error: Failed to Create Experience.";
+  }
+  revalidatePath("/admin");
+}
+
+export async function deleteExperience(id: number) {
+  try {
+    await db.delete(experienceTable).where(eq(experienceTable.id, id));
+  } catch (error) {
+    return "Database Error: Failed to Delete Experience.";
   }
   revalidatePath("/admin");
 }
