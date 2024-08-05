@@ -4,11 +4,14 @@ import { DeleteExperience } from "@/components/delete-experience";
 
 export async function WorkExperience() {
   const experiences = await experienceList();
+  const experiencesSorted = experiences.sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+  );
   const session = await auth();
 
   return (
     <div className="flex flex-col gap-2 basis-3/5 max-w-3xl">
-      {experiences.reverse().map((experience) => (
+      {experiencesSorted.map((experience) => (
         <div
           key={experience.id}
           className="flex flex-col p-4 rounded-xl border-1 font-sans"
