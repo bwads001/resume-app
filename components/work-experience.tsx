@@ -18,14 +18,15 @@ export async function WorkExperience() {
           className="flex flex-col p-4 rounded-xl border-1 font-sans"
         >
           <div>
-            <div>
+            <div className="flex flex-col w-2/5">
               <h3 className="text-lg">{experience.position}</h3>
               <h4 className="text-xl text-primary-600">{experience.company}</h4>
               <p className="text-xs text-foreground-500 mb-1">
                 {experience.startDate} - {experience.endDate}
               </p>
             </div>
-            <div>
+            <div className="float-right">
+              {experience.id}
               {session?.user && <DeleteExperience id={experience.id} />}
             </div>
           </div>

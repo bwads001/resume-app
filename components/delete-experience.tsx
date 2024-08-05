@@ -2,13 +2,14 @@ import { Button } from "@nextui-org/button";
 
 import { deleteExperience } from "@/app/lib/actions";
 
-export function DeleteExperience(id: any) {
+export function DeleteExperience({ id }: { id: number }) {
   return (
     <Button
       className="text-xs text-secondary"
       type="submit"
       onClick={async () => {
         "use server";
+
         await deleteExperience(id);
       }}
     >
