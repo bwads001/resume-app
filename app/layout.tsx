@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import { Providers } from "./providers";
 
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/app/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 

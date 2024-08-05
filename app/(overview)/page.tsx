@@ -1,10 +1,10 @@
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 
+import { GithubIcon } from "@/app/components/icons";
+import { subtitle, title } from "@/app/components/primitives";
+import { WorkExperience } from "@/app/components/work-experience";
 import { userInfo } from "@/app/lib/data";
-import { GithubIcon } from "@/components/icons";
-import { subtitle, title } from "@/components/primitives";
-import { WorkExperience } from "@/components/work-experience";
 import { siteConfig } from "@/config/site";
 
 export default async function Home() {

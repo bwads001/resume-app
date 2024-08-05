@@ -1,19 +1,19 @@
-import {
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-  Navbar as NextUINavbar,
-} from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
+import {
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+    NavbarMenu,
+    NavbarMenuItem,
+    NavbarMenuToggle,
+    Navbar as NextUINavbar,
+} from "@nextui-org/navbar";
 import { link as linkStyles } from "@nextui-org/theme";
 import clsx from "clsx";
 import NextLink from "next/link";
 
-import { GithubIcon, LinkedinIcon, Logo } from "@/components/icons";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { GithubIcon, LinkedinIcon, Logo } from "@/app/components/icons";
+import { ThemeSwitch } from "@/app/components/theme-switch";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {

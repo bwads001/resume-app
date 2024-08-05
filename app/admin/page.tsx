@@ -1,10 +1,10 @@
 import { redirect } from "next/navigation";
 
+import { AddExperience } from "@/app/components/add-experience";
+import { subtitle, title } from "@/app/components/primitives";
+import { SignOut } from "@/app/components/sign-out";
+import { WorkExperience } from "@/app/components/work-experience";
 import { auth } from "@/auth";
-import { AddExperience } from "@/components/add-experience";
-import { subtitle, title } from "@/components/primitives";
-import { SignOut } from "@/components/sign-out";
-import { WorkExperience } from "@/components/work-experience";
 export default async function AdminPage() {
   const session = await auth();
 
