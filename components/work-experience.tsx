@@ -6,7 +6,7 @@ export async function WorkExperience() {
   const experiences = await experienceList();
   const experiencesSorted = experiences.sort(
     (a, b) =>
-      (a.startDate.split("/")[1] as any) - (b.startDate.split("/")[1] as any),
+      (b.startDate.split("/")[1] as any) - (a.startDate.split("/")[1] as any),
   );
   const session = await auth();
 
