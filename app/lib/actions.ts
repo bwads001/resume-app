@@ -65,9 +65,11 @@ export async function createExperience(previousState: any, formData: FormData) {
   revalidatePath("/admin");
 }
 
-export async function deleteExperience(id: number) {
+export async function deleteExperience(previousState: any, formData: FormData) {
   try {
-    await db.delete(experienceTable).where(eq(experienceTable.id, id));
+    await db
+      .delete(experienceTable)
+      .where(eq(experienceTable.id, Number(formData.get("id"))));
   } catch (error) {
     return "Database Error: Failed to Delete Experience.";
   }
