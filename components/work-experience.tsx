@@ -4,8 +4,9 @@ import { DeleteExperience } from "@/components/delete-experience";
 
 export async function WorkExperience() {
   const experiences = await experienceList();
-  const experiencesSorted = experiences.sort((a, b) =>
-    a.startDate.localeCompare(b.startDate),
+  const experiencesSorted = experiences.sort(
+    (a, b) =>
+      (a.startDate.split("/")[1] as any) - (b.startDate.split("/")[1] as any),
   );
   const session = await auth();
 
