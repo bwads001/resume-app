@@ -17,7 +17,7 @@ export async function WorkExperience() {
           key={experience.id}
           className="flex flex-col p-4 rounded-xl border-1 font-sans"
         >
-          <div>
+          <div className="flex flex-row">
             <div className="flex flex-col w-2/5">
               <h3 className="text-lg">{experience.position}</h3>
               <h4 className="text-xl text-primary-600">{experience.company}</h4>
@@ -26,7 +26,6 @@ export async function WorkExperience() {
               </p>
             </div>
             <div className="float-right">
-              {experience.id}
               {session?.user && <DeleteExperience id={experience.id} />}
             </div>
           </div>
