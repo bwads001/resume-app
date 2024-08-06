@@ -15,7 +15,7 @@ export async function WorkExperience() {
       {experiencesSorted.map((experience) => (
         <div
           key={experience.id}
-          className="flex flex-col p-4 rounded-xl border-2 border-foreground-600 bg-background-950/60 font-sans divide-foreground-600"
+          className="flex flex-col p-4 rounded-xl bg-background-950/60 font-sans divide-foreground-600"
         >
           <div className="flex flex-row relative">
             <div className="flex flex-col">
