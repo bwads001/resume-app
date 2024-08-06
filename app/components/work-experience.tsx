@@ -15,13 +15,13 @@ export async function WorkExperience() {
       {experiencesSorted.map((experience) => (
         <div
           key={experience.id}
-          className="flex flex-col p-4 rounded-xl border-2 border-primary bg-background-800 font-sans divide-foreground"
+          className="flex flex-col p-4 rounded-xl border-2 border-foreground-600 bg-background-950/60 font-sans divide-foreground-600"
         >
           <div className="flex flex-row relative">
-            <div className="flex flex-col w-3/5">
+            <div className="flex flex-col">
               <h3 className="text-xl font-semibold">{experience.position}</h3>
-              <h4 className="text-lg text-primary-600">{experience.company}</h4>
-              <p className="text-xs mb-1 font-semibold">
+              <h4 className="text-lg text-primary">{experience.company}</h4>
+              <p className="text-xs mb-1 font-semibold text-foreground-600">
                 {experience.startDate} - {experience.endDate}
               </p>
             </div>

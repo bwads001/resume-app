@@ -19,7 +19,7 @@ import { siteConfig } from "@/config/site";
 export const Navbar = () => {
   return (
     <NextUINavbar
-      className="bg-background-700/60 border-b-2"
+      className="bg-background-950/60 border-b-2 border-foreground-600"
       isBordered={true}
       maxWidth="2xl"
       position="sticky"
