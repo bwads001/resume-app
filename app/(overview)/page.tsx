@@ -1,11 +1,6 @@
-import { Link } from "@nextui-org/link";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { GithubIcon } from "@/app/components/icons";
 import { subtitle, title } from "@/app/components/primitives";
 import { WorkExperience } from "@/app/components/work-experience";
 import { userInfo } from "@/app/lib/data";
-import { siteConfig } from "@/config/site";
 
 export default async function Home() {
   const user = await userInfo("Bryan Wadsworth");
@@ -18,16 +13,6 @@ export default async function Home() {
       </div>
       <div className="flex flex-col gap-4 max-w-7xl">
         <WorkExperience />
-      </div>
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={24} />
-          GitHub
-        </Link>
       </div>
     </section>
   );

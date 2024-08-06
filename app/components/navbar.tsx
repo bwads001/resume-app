@@ -1,12 +1,12 @@
 import { Link } from "@nextui-org/link";
 import {
-    NavbarBrand,
-    NavbarContent,
-    NavbarItem,
-    NavbarMenu,
-    NavbarMenuItem,
-    NavbarMenuToggle,
-    Navbar as NextUINavbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
 import { link as linkStyles } from "@nextui-org/theme";
 import clsx from "clsx";
@@ -18,7 +18,12 @@ import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   return (
-    <NextUINavbar maxWidth="2xl" position="sticky">
+    <NextUINavbar
+      className="bg-background-700/60 border-b-2"
+      isBordered={true}
+      maxWidth="2xl"
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink
@@ -26,7 +31,7 @@ export const Navbar = () => {
             href="/"
           >
             <Logo />
-            <p className="font-bold text-inherit">BRYAN WADSWORTH</p>
+            <p className="font-bold">BRYAN WADSWORTH</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -53,14 +58,14 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+            <GithubIcon />
           </Link>
           <Link
             isExternal
             aria-label="LinkedIn"
             href={siteConfig.links.linkedin}
           >
-            <LinkedinIcon className="text-default-500" />
+            <LinkedinIcon />
           </Link>
         </NavbarItem>
 
@@ -71,10 +76,10 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+          <GithubIcon />
         </Link>
         <Link isExternal aria-label="LinkedIn" href={siteConfig.links.linkedin}>
-          <LinkedinIcon className="text-default-500" />
+          <LinkedinIcon />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />

@@ -9,7 +9,7 @@ export function DeleteExperience({ id }: { id: number }) {
   return (
     <form action={action} className="float-right justify-end">
       <button
-        className="m-2 p-0 text-s text-neutral-300 bg-transparent hover:text-red-500"
+        className="m-2 p-0 text-s bg-transparent hover:text-red-500"
         disabled={isPending}
         name="id"
         type="submit"
