@@ -19,9 +19,9 @@ export async function WorkExperience() {
         >
           <div className="flex flex-row relative">
             <div className="flex flex-col w-3/5">
-              <h3 className="text-lg">{experience.position}</h3>
-              <h4 className="text-xl text-primary-600">{experience.company}</h4>
-              <p className="text-xs text-foreground-500 mb-1">
+              <h3 className="text-xl font-semibold">{experience.position}</h3>
+              <h4 className="text-lg text-primary-600">{experience.company}</h4>
+              <p className="text-xs mb-1 font-semibold">
                 {experience.startDate} - {experience.endDate}
               </p>
             </div>
