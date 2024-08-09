@@ -7,7 +7,7 @@ export async function WorkExperience() {
   const experiences = await experienceList();
   const experiencesSorted = experiences.sort(
     (a, b) =>
-      (b.startDate.split("/")[1] as any) - (a.startDate.split("/")[1] as any),
+      Number(b.startDate.split("/")[1]) - Number(a.startDate.split("/")[1]),
   );
 
   return (
