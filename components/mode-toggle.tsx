@@ -16,6 +16,7 @@ export function ModeToggle() {
   const cycleTheme = () => {
     if (theme === 'light') setTheme('dark')
     else if (theme === 'dark') setTheme('system')
+    else if (theme === 'system') setTheme('light')
     else setTheme('light')
   }
 
