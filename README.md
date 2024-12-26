@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bryan Wadsworth - Resume Website
 
-## Getting Started
+A modern, responsive resume website built with Next.js 14, TypeScript, Tailwind CSS, and Shadcn UI. I created this project after leaving GoDaddy to explore the latest frontend technologies while building something useful for others.
 
-First, run the development server:
+## 🚀 Live Demo
 
+Visit the live site: [bryanwadsworth.com](https://bryanwadsworth.com)  
+Connect with me: [LinkedIn](https://linkedin.com/in/bryanwadsworth)
+
+## 🛠 Tech Stack
+
+- [Next.js 14](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+
+## 🎯 Using This Template
+
+Feel free to use this code as a template for your own resume! Here's how to get started:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/resume-website.git
+cd resume-website
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Customize your data:
+   - Navigate to `/data` directory
+   - Edit `experience.ts` with your work history
+   - Modify `skills.ts` with your technical skills
+   - Update `links.ts` with your social media profiles
+
+4. Customize the theme:
+   - Theme colors are defined in `app/globals.css`
+   - Modify the `:root` and `.dark` CSS variables to match your preferred color scheme
+   - Example color customization:
+```css
+:root {
+  --primary: 199 89% 48%; /* Your brand color */
+  --secondary: 210 40% 96.1%;
+  /* ... other color variables */
+}
+```
+
+5. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📱 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Fully responsive design
+- Dark/light mode support
+- SEO optimized
+- Accessible UI components
+- Interactive skill cards
+- Smooth animations
+- Wave transitions between sections
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributing
 
-## Learn More
+Contributions are welcome! Feel free to submit issues and pull requests.
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is open source and available under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💡 About
 
-## Deploy on Vercel
+I built this project to keep my skills sharp and provide a useful template for other developers. The codebase demonstrates modern React patterns, responsive design, and clean architecture.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions or collaborations, reach out on [LinkedIn](https://linkedin.com/in/bryanwadsworth).
