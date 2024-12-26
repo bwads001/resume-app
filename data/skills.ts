@@ -1,0 +1,54 @@
+export const skills = {
+    "Frontend Development": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+    ],
+    "Mobile Development": [ 
+        "React Native",
+        "Expo",
+        "Flutter",
+    ],
+    "Backend Development": [
+        "Node.js",
+        "Python",
+        "PHP",
+        "C#",
+    ],
+    "Game Development": [
+        "Unity",
+        "Unreal Engine",
+    ],
+    "Databases, Caching & Messaging": [
+        "MySQL",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "Memcached",
+        "RabbitMQ",
+    ],
+    "DevOps, Cloud & Platform Engineering": [
+        "Docker",
+        "Kubernetes",
+        "OpenStack",
+        "GitHub Actions",
+    ],
+    "Platform Engineering and API Integration": [
+        "Jira",
+        "Jira Service Desk",
+        "Confluence",
+        "ServiceNow",
+        "Salesforce",
+        "HubSpot",
+        "Qualtrics",
+        "Slack",
+    ],
+    "Web Hosting & Server Management": [
+        "cPanel",
+        "Apache",
+        "Nginx",
+        "AlmaLinux",
+        "Debian",
+    ],
+}; 

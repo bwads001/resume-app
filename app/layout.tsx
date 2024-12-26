@@ -8,8 +8,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bryan Wadsworth - SaaS Platform Engineer",
-  description: "Personal website and resume of Bryan Wadsworth, SaaS Platform Engineer",
+  title: "Bryan Wadsworth - Platform Engineering Leader",
+  description: "Personal website and resume of Bryan Wadsworth.",
 }
 
 export default function RootLayout({
