@@ -15,7 +15,7 @@ export function WaveTransition() {
   const translateY1 = useTransform(scrollYProgress, [0, 1], [-10, 0])
 
   return (
-    <div ref={ref} className="h-80 bg-primary/5 dark:bg-primary/10 relative overflow-hidden">
+    <div ref={ref} className="h-80 bg-primary/15 relative overflow-hidden">
       <svg 
         viewBox="0 0 1920 400"
         className="absolute bottom-0 w-full h-full"
@@ -27,7 +27,7 @@ export function WaveTransition() {
             translateX: translateX1,
             translateY: translateY1
           }}
-          className="fill-primary/10 dark:fill-primary/20"
+          className="fill-primary/25"
           d="M0,32L120,53.3C240,75,480,0,720,32C960,64,1200,96,1440,80C1680,64,1920,64,2160,80C2400,96,2640,128,2760,144L2880,160L2880,320L2760,320C2640,320,2400,320,2160,320C1920,320,1680,320,1440,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
         ></motion.path>
         {/* Foreground wave - moving right */}

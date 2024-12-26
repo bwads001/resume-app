@@ -76,7 +76,7 @@ export function Skills() {
         </div>
       </div>
       <div 
-        className="absolute bottom-0 left-0 right-0 h-16 md:h-24 lg:h-32 bg-primary/5 dark:bg-primary/10" 
+        className="absolute bottom-0 left-0 right-0 h-16 md:h-24 lg:h-32 bg-primary/15" 
         style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0% 100%)' }}
       ></div>
     </div>
