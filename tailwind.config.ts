@@ -8,6 +8,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -58,5 +65,29 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addComponents }: { addComponents: any }) {
+      addComponents({
+        '.section-padding': {
+          '@apply py-16 md:py-28 lg:py-36': {}
+        },
+        '.section-container': {
+          '@apply container mx-auto px-4': {}
+        },
+        '.section-heading': {
+          '@apply text-4xl font-semibold tracking-tight mb-12': {}
+        },
+        '.hover-link': {
+          '@apply transition-colors duration-200 hover:underline': {},
+          '&:hover': {
+            '@apply text-foreground dark:text-white': {}
+          }
+        },
+        '.section-bg': {
+          '@apply bg-primary/15': {}
+        }
+      })
+    }
+  ],
 } satisfies Config;

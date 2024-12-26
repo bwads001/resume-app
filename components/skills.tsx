@@ -12,7 +12,7 @@ export function Skills() {
               <h3 className="text-2xl font-medium mb-4">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (
-                  <Badge key={skill} variant="outline" className="text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-primary-foreground">
+                  <Badge key={skill} variant="skill">
                     {skill}
                   </Badge>
                 ))}

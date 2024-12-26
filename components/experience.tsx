@@ -7,7 +7,7 @@ interface ExperienceProps {
 
 export function Experience({ jobs }: ExperienceProps) {
   return (
-    <div className="bg-primary/15 py-16 md:py-30 lg:py-36">
+    <div className="bg-primary/15 py-16 md:py-28 lg:py-36">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-semibold tracking-tight mb-12 pb-12">
           Experience
