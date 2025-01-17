@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { /* ArrowRight, */ Linkedin } from 'lucide-react'
+import { FileDown, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
 export function Hero() {
@@ -15,12 +15,12 @@ export function Hero() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
-{/*           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90" asChild>
-            <Link href="/path-to-your-resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90" asChild>
+            <Link href="/Bryan Wadsworth Resume.pdf" target="_blank" rel="noopener noreferrer">
               Download Resume
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <FileDown className="ml-2 h-4 w-4" />
             </Link>
-          </Button> */}
+          </Button>
           <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-primary-foreground" asChild>
             <Link href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-4 w-4" />
