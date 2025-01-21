@@ -3,7 +3,7 @@ import { skills } from "@/data/skills";
 
 export function Skills() {
   return (
-    <div className="py-24 pb-40 md:py-32 md:pb-56 lg:py-40 lg:pb-64 relative">
+    <div className="py-14 pb-28 md:py-20 md:pb-40 lg:py-28 lg:pb-56 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-semibold mb-12 text-center">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

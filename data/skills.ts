@@ -8,7 +8,9 @@ export const skills = {
     "Mobile Development": [ 
         "React Native",
         "Expo",
-        "Flutter",
+        "AdMob",
+        "Google Play",
+        "Apple App Store",
     ],
     "Backend Development": [
         "Node.js",
