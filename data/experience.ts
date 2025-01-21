@@ -8,7 +8,7 @@ export interface Job {
 
 export const jobs: Job[] = [
   {
-    title: "Director of Technology",
+    title: "Lead Engineer",
     company: "Bespoke Tech Solutions",
     period: "08/2023 - Present",
     description: [
