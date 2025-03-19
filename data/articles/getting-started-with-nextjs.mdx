@@ -33,10 +33,22 @@ Next.js isn't just another framework—it's a complete platform that simplifies 
 
 ## Getting Started
 
-To start a new Next.js project, run:
+To start a new Next.js project with TypeScript, ESLint, and Tailwind CSS (recommended), run:
 
 ```bash
-npx create-next-app my-app
+npx create-next-app@latest my-app
+```
+
+When prompted, select the following options:
+- Would you like to use TypeScript? › Yes
+- Would you like to use ESLint? › Yes
+- Would you like to use Tailwind CSS? › Yes
+- Would you like to use the `src/` directory? › No
+- Would you like to use App Router? › Yes
+- Would you like to customize the default import alias (@/*)? › Yes
+
+After the installation completes:
+```bash
 cd my-app
 npm run dev
 ```
@@ -51,32 +63,35 @@ After setting up your initial Next.js application, here are some common next ste
    - `/app`: Contains your pages and components (App Router)
    - `/public`: Static assets like images and fonts
    - `/components`: Reusable UI components
+   - `tsconfig.json`: TypeScript configuration
+   - `tailwind.config.ts`: Tailwind CSS configuration
+   - `.eslintrc.json`: ESLint configuration
 
 2. **Add Styling**:
    Next.js supports various styling methods:
    - CSS Modules: `styles/Home.module.css`
-   - Global CSS: Import in `app/layout.js`
-   - Tailwind CSS: Already configured if selected during setup
+   - Global CSS: Import in `app/layout.tsx`
+   - Tailwind CSS: Already configured during setup
    - CSS-in-JS libraries like styled-components
 
 3. **Create New Pages**:
-   With the App Router, simply create a new folder with a `page.js` file inside the `/app` directory.
+   With the App Router, simply create a new folder with a `page.tsx` file inside the `/app` directory.
 
 4. **Implement Server Actions**:
    Server Actions allow you to run server-side code from your client components:
 
-   ```jsx
-   // app/actions.js
+   ```tsx
+   // app/actions.ts
    "use server";
    
-   export async function saveData(formData) {
+   export async function saveData(formData: FormData) {
      // Server-side code to save data
      const data = Object.fromEntries(formData);
      // Save to database
      return { success: true };
    }
    
-   // app/form/page.js
+   // app/form/page.tsx
    import { saveData } from "../actions";
    
    export default function Form() {
@@ -90,11 +105,17 @@ After setting up your initial Next.js application, here are some common next ste
    ```
 
 5. **Fetch Data**:
-   Fetch data in your pages or components:
+   Fetch data in your pages or components with type safety:
 
-   ```jsx
-   // app/posts/page.js
-   async function getPosts() {
+   ```tsx
+   // app/types.ts
+   interface Post {
+     id: number;
+     title: string;
+   }
+
+   // app/posts/page.tsx
+   async function getPosts(): Promise<Post[]> {
      const res = await fetch('https://api.example.com/posts');
      return res.json();
    }
