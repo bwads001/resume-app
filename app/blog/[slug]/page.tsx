@@ -15,7 +15,7 @@ export default async function Page({
   }
   
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-16 min-h-screen">
       <BlogPostContent article={article} />
     </div>
   )
