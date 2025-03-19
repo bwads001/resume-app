@@ -2,10 +2,10 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { BlogPost } from "@/data/blog"
+import { Article } from "@/lib/mdx"
 
 interface BlogCardProps {
-  post: BlogPost
+  post: Article
   index: number
 }
 

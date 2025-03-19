@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
     darkMode: ["class"],
@@ -66,8 +68,8 @@ export default {
   	}
   },
   plugins: [
-    require("tailwindcss-animate"),
-    function({ addComponents }: { addComponents: any }) {
+    tailwindcssAnimate,
+    function({ addComponents }: { addComponents: PluginAPI["addComponents"] }) {
       addComponents({
         '.section-padding': {
           '@apply py-16 md:py-28 lg:py-36': {}
