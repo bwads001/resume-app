@@ -27,6 +27,7 @@ export const skills = {
         "MongoDB",
         "PostgreSQL",
         "Redis",
+        "MariaDB",
         "Memcached",
         "RabbitMQ",
     ],
