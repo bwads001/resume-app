@@ -39,15 +39,44 @@ To start a new Next.js project with TypeScript, ESLint, and Tailwind CSS (recomm
 npx create-next-app@latest my-app
 ```
 
-When prompted, select the following options:
-- Would you like to use TypeScript? › Yes
-- Would you like to use ESLint? › Yes
-- Would you like to use Tailwind CSS? › Yes
-- Would you like to use the `src/` directory? › No
-- Would you like to use App Router? › Yes
-- Would you like to customize the default import alias (@/*)? › Yes
+During setup, you'll be prompted with several options. Here's what each one means:
 
-After the installation completes:
+1. **Would you like to use TypeScript? › Yes**
+   - TypeScript adds type safety to JavaScript, helping catch errors before your code runs
+   - It provides better autocomplete and documentation in your code editor
+   - Makes your code more maintainable as your project grows
+   - Recommended for all new projects
+
+2. **Would you like to use ESLint? › Yes**
+   - ESLint checks your code for common mistakes and enforces consistent coding styles
+   - Helps maintain code quality across your project
+   - Catches potential bugs before they make it to production
+   - Recommended for all projects, especially team collaborations
+
+3. **Would you like to use Tailwind CSS? › Yes**
+   - Tailwind is a utility-first CSS framework that makes styling faster and more consistent
+   - Instead of writing traditional CSS, you add classes directly to your HTML/JSX
+   - Provides a great set of pre-built styles while maintaining full customization control
+   - Recommended for rapid development and consistent design
+
+4. **Would you like to use the `src/` directory? › No**
+   - The src/ directory is an optional way to organize your code
+   - "No" keeps your project files in the root directory, which is simpler for beginners
+   - You can always move files to a src/ directory later if needed
+   - Either option is fine; we recommend "No" for simpler projects
+
+5. **Would you like to use App Router? › Yes**
+   - App Router is Next.js's newest and recommended routing system
+   - Provides more intuitive file-based routing
+   - Enables powerful features like server components and nested layouts
+   - Recommended for all new projects (the older Pages Router is being phased out)
+
+6. **Would you like to customize the default import alias (@/*)? › No**
+   - Selecting "No" keeps the standard `@/*` alias (recommended)
+   - This lets you write imports like `@/components/Button` instead of `../../components/Button`
+   - Only choose "Yes" if you need a different alias pattern for specific project requirements
+
+After selecting these options and the installation completes, run:
 ```bash
 cd my-app
 npm run dev
