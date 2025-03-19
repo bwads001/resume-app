@@ -25,7 +25,7 @@ export function BlogPostContent({ article }: BlogPostContentProps) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-card border border-border rounded-xl shadow-sm p-8 sm:p-10"
+        className="bg-card dark:bg-blog-card border border-border rounded-xl shadow-sm p-8 sm:p-10"
       >
         <header className="mb-10 border-b border-border pb-8">
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">

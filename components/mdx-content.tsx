@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
 import { Copy, CheckCircle, Code } from 'lucide-react'
+import OpenGraphImage from './OpenGraphImage'
 
 interface MDXContentProps {
   code: string
@@ -130,6 +131,7 @@ const mdxComponents = {
       {children}
     </blockquote>
   ),
+  OpenGraphImage: OpenGraphImage,
 }
 
 export function MDXContent({ code }: MDXContentProps) {
