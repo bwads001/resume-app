@@ -3,7 +3,8 @@
 import { motion } from "framer-motion"
 import { BlogCard } from "@/components/blog-card"
 import { Article } from "@/lib/mdx"
-import { PenLine } from "lucide-react"
+import { PenLine, Rss } from "lucide-react"
+import Link from "next/link"
 
 interface BlogListProps {
   articles: Article[]
@@ -35,9 +36,17 @@ export function BlogList({ articles }: BlogListProps) {
         <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           Latest Insights
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
           Thoughts, experiences, and insights about technology, development, and platform engineering
         </p>
+        <Link 
+          href="/feed.xml" 
+          className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+          title="RSS Feed"
+        >
+          <Rss className="h-4 w-4 mr-2" />
+          <span className="text-sm font-medium">Subscribe via RSS</span>
+        </Link>
       </motion.div>
 
       <motion.div 
