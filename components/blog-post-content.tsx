@@ -5,6 +5,7 @@ import { Article } from "@/lib/mdx"
 import { MDXContent } from "@/components/mdx-content"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import Script from "next/script"
 
 /**
  * Props for the BlogPostContent component
@@ -21,8 +22,33 @@ interface BlogPostContentProps {
  * @returns {JSX.Element} - The rendered blog post content with header and MDX content
  */
 export function BlogPostContent({ article }: BlogPostContentProps) {
+  // Create JSON-LD structured data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "description": article.summary,
+    "author": {
+      "@type": "Person",
+      "name": "Bryan Wadsworth"
+    },
+    "datePublished": article.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://bryanwadsworth.com/blog/${article.slug}`
+    },
+    "keywords": article.tags.join(", ")
+  };
+  
   return (
     <div className="max-w-4xl mx-auto">
+      {/* Add JSON-LD structured data */}
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
       <Link 
         href="/blog" 
         className="inline-flex items-center text-muted-foreground hover:text-primary mb-8 transition-colors"
