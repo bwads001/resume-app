@@ -6,10 +6,20 @@ import { MDXContent } from "@/components/mdx-content"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
+/**
+ * Props for the BlogPostContent component
+ * @interface BlogPostContentProps
+ * @property {Article} article - The blog article data to be displayed
+ */
 interface BlogPostContentProps {
   article: Article
 }
 
+/**
+ * Renders a full blog post with animated layout and styling
+ * @param {BlogPostContentProps} props - The component props
+ * @returns {JSX.Element} - The rendered blog post content with header and MDX content
+ */
 export function BlogPostContent({ article }: BlogPostContentProps) {
   return (
     <div className="max-w-4xl mx-auto">

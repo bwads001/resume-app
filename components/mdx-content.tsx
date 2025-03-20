@@ -7,11 +7,20 @@ import { evaluate } from '@mdx-js/mdx'
 import { Copy, CheckCircle, Code } from 'lucide-react'
 import OpenGraphImage from './OpenGraphImage'
 
+/**
+ * Props for the MDXContent component
+ * @interface MDXContentProps
+ * @property {string} code - The MDX content as a string to be rendered
+ */
 interface MDXContentProps {
   code: string
 }
 
-// Helper to extract text content from React nodes
+/**
+ * Extracts text content from React nodes recursively
+ * @param {React.ReactNode} node - The React node to extract text from
+ * @returns {string} The extracted text content
+ */
 function getTextContent(node: React.ReactNode): string {
   if (typeof node === 'string') return node
   if (Array.isArray(node)) return node.map(getTextContent).join('')
@@ -24,7 +33,12 @@ function getTextContent(node: React.ReactNode): string {
   return ''
 }
 
-// Copy button component that can be added to code blocks
+/**
+ * Copy button component for code blocks
+ * @param {Object} props - Component props
+ * @param {string} props.text - The text to copy to clipboard
+ * @returns {JSX.Element} - The copy button component
+ */
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = React.useState(false)
 
@@ -134,6 +148,11 @@ const mdxComponents = {
   OpenGraphImage: OpenGraphImage,
 }
 
+/**
+ * Renders MDX content with custom components and styling
+ * @param {MDXContentProps} props - The component props
+ * @returns {JSX.Element} - The rendered MDX content
+ */
 export function MDXContent({ code }: MDXContentProps) {
   const [renderedContent, setRenderedContent] = React.useState<React.ComponentType | null>(null)
   const [error, setError] = React.useState(false)

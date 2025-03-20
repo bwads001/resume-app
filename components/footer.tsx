@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { Github, Linkedin } from 'lucide-react'
 import { socialLinks } from "@/data/links";
 
+/**
+ * Footer component with social links and copyright information
+ * @returns {JSX.Element} - The footer section with social media links and attribution
+ */
 export function Footer() {
   return (
     <footer className="bg-background">

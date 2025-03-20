@@ -6,6 +6,10 @@ import { Github, Linkedin, Menu, X } from 'lucide-react'
 import { ModeToggle } from "@/components/mode-toggle"
 import { socialLinks } from "@/data/links"
 
+/**
+ * Logo component displaying the stylized W logo
+ * @returns {JSX.Element} The SVG logo component
+ */
 const WLogo = () => (
   <svg fill="none" height="42" viewBox="0 0 48 48" width="42">
     <path 
@@ -17,6 +21,10 @@ const WLogo = () => (
   </svg>
 )
 
+/**
+ * Header component with navigation and mobile menu functionality
+ * @returns {JSX.Element} The header component with desktop and mobile navigation
+ */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 

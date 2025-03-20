@@ -5,11 +5,22 @@ import { motion } from "framer-motion"
 import { Article } from "@/lib/mdx"
 import { Calendar, ArrowRight } from "lucide-react"
 
+/**
+ * Props for the BlogCard component
+ * @interface BlogCardProps
+ * @property {Article} post - The blog post data
+ * @property {number} index - The index of the card for staggered animations
+ */
 interface BlogCardProps {
   post: Article
   index: number
 }
 
+/**
+ * Blog card component displaying a preview of a blog post
+ * @param {BlogCardProps} props - The component props
+ * @returns {JSX.Element} - The animated blog card with post information
+ */
 export function BlogCard({ post, index }: BlogCardProps) {
   return (
     <motion.article 
