@@ -1,10 +1,9 @@
 'use server';
 
 import { getArticleBySlug } from "@/lib/mdx";
-import { revalidatePath } from 'next/cache';
 
 /**
- * Server action to fetch and cache article data for OpenGraph images
+ * Server action to fetch article data for OpenGraph images
  * This runs on the server (Node.js) but makes the data available to Edge functions
  */
 export async function fetchArticleMetadata(slug: string) {
@@ -21,18 +20,13 @@ export async function fetchArticleMetadata(slug: string) {
       };
     }
     
-    // Cache the data using Next.js cache mechanisms
-    const articleData = {
+    // Return the data without revalidating during render
+    return {
       status: 'success',
       title: article.title || formatSlug(slug),
       summary: article.summary || '',
       date: article.date || ''
     };
-    
-    // Revalidate the path to ensure fresh data
-    revalidatePath(`/blog/${slug}`);
-    
-    return articleData;
   } catch (error) {
     console.error(`Error fetching article metadata for ${slug}:`, error);
     return {

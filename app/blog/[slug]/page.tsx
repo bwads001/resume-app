@@ -52,8 +52,8 @@ export default async function Page({
     notFound()
   }
   
-  // Fetch and prepare article metadata for OpenGraph image
-  // This will run on the server and make the data available to the Edge runtime
+  // Prefetch metadata but don't revalidate during render
+  // This makes the data available to API routes without causing render errors
   await fetchArticleMetadata(slug)
   
   return (

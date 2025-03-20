@@ -10,6 +10,7 @@ interface OpenGraphImageProps {
   width?: number;
   height?: number; 
   className?: string;
+  fallbackImage?: string;
 }
 
 export default function OpenGraphImage({
