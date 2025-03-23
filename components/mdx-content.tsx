@@ -51,7 +51,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center gap-1 px-2 py-1 rounded-md bg-primary/10 hover:bg-primary/20 transition-all focus:outline-none focus:ring-2 focus:ring-primary/30 text-xs font-medium"
+      className="flex items-center gap-1 px-2 py-1 rounded-md bg-primary/10 hover:bg-primary/20 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary/30 text-xs font-medium"
       title="Copy code"
       aria-label="Copy code to clipboard"
     >

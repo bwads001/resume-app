@@ -33,7 +33,7 @@ export function BlogList({ articles }: BlogListProps) {
           <PenLine className="h-5 w-5 mr-2" />
           <span className="font-medium">Blog & Articles</span>
         </div>
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-4 bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           Latest Insights
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">

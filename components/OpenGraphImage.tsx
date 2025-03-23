@@ -52,7 +52,7 @@ export default function OpenGraphImage({
   // Loading state
   if (loading) {
     return (
-      <div className={`bg-gray-100 animate-pulse flex items-center justify-center rounded-md border border-muted shadow-sm ${className}`} style={{ width, height, minHeight: 200 }}>
+      <div className={`bg-gray-100 animate-pulse flex items-center justify-center rounded-md border border-muted shadow-xs ${className}`} style={{ width, height, minHeight: 200 }}>
         <p className="text-gray-400 text-sm">Loading image...</p>
       </div>
     );
@@ -61,7 +61,7 @@ export default function OpenGraphImage({
   // Error state
   if (error || !ogImage) {
     return (
-      <div className={`bg-gray-100 flex items-center justify-center rounded-md border border-muted shadow-sm ${className}`} style={{ width, height, minHeight: 200 }}>
+      <div className={`bg-gray-100 flex items-center justify-center rounded-md border border-muted shadow-xs ${className}`} style={{ width, height, minHeight: 200 }}>
         <p className="text-gray-500 text-sm p-4 text-center">
           {error || `Failed to load image for ${url}`}
         </p>
@@ -71,7 +71,7 @@ export default function OpenGraphImage({
   
   // Success state
   return (
-    <div className="relative rounded-md overflow-hidden border border-muted shadow-sm">
+    <div className="relative rounded-md overflow-hidden border border-muted shadow-xs">
       <Image
         src={ogImage.url}
         alt={ogImage.alt || alt || `Screenshot of ${url}`}

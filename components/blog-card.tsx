@@ -33,7 +33,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
       }}
     >
       {/* Accent top border with gradient */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary to-primary/60" />
       
       <Link href={`/blog/${post.slug}`} className="block h-full">
         <div className="p-6">
