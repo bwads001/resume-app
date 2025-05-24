@@ -13,27 +13,27 @@ export function Hero() {
     <div className="bg-linear-to-br from-primary/20 via-primary/10 to-background pb-18 md:pb-32 relative">
       <div className="container mx-auto px-4 py-20 md:py-40 space-y-8">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 space-y-4">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              Bryan Wadsworth
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-              Platform Engineering Leader
-            </p>
-          </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 order-2 md:order-1">
             <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
               <Image
                 src="/images/Bryan.jpg"
                 alt="Bryan Wadsworth - Platform Engineering Leader"
                 fill
-                className="rounded-full object-cover border-4 border-background shadow-xl"
+                className="rounded-full object-cover object-top border-4 border-background shadow-xl"
                 priority
               />
             </div>
           </div>
+          <div className="flex-1 space-y-4 order-1 md:order-2 text-center md:text-left">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              Bryan Wadsworth
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl md:max-w-none">
+              Platform Engineering Leader
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <PDFDownloadButton />
           <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-primary-foreground" asChild>
             <Link href="https://www.linkedin.com/in/bryan-wadsworth-a90b4013/" target="_blank" rel="noopener noreferrer">

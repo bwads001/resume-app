@@ -2,6 +2,7 @@ import React from 'react'
 import { Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer'
 import { skills } from '@/data/skills'
 import { jobs, Job } from '@/data/experience'
+import { projects, Project } from '@/data/projects'
 import { contact } from '@/data/contact'
 
 // Register fonts for better typography
@@ -189,6 +190,35 @@ export function ResumePDF({
               </View>
             ))}
           </View>
+        </View>
+
+        {/* Key Projects Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Key Projects</Text>
+          {projects.slice(0, 2).map((project: Project, index: number) => (
+            <View key={index} style={styles.jobContainer}>
+              <View style={styles.jobHeader}>
+                <View>
+                  <Text style={styles.jobTitle}>{project.title}</Text>
+                  <Text style={styles.company}>{project.category} • {project.status}</Text>
+                </View>
+                <Text style={styles.period}>{project.period}</Text>
+              </View>
+              <View style={styles.description}>
+                <Text style={styles.bullet}>
+                  • {project.description}
+                </Text>
+                {project.highlights.slice(0, 2).map((highlight: string, highlightIndex: number) => (
+                  <Text key={highlightIndex} style={styles.bullet}>
+                    • {highlight}
+                  </Text>
+                ))}
+                <Text style={styles.bullet}>
+                  • Technologies: {project.technologies.slice(0, 6).join(', ')}
+                </Text>
+              </View>
+            </View>
+          ))}
         </View>
       </Page>
     </Document>
