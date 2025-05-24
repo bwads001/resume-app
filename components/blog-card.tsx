@@ -5,11 +5,22 @@ import { motion } from "framer-motion"
 import { Article } from "@/lib/mdx"
 import { Calendar, ArrowRight } from "lucide-react"
 
+/**
+ * Props for the BlogCard component
+ * @interface BlogCardProps
+ * @property {Article} post - The blog post data
+ * @property {number} index - The index of the card for staggered animations
+ */
 interface BlogCardProps {
   post: Article
   index: number
 }
 
+/**
+ * Blog card component displaying a preview of a blog post
+ * @param {BlogCardProps} props - The component props
+ * @returns {JSX.Element} - The animated blog card with post information
+ */
 export function BlogCard({ post, index }: BlogCardProps) {
   return (
     <motion.article 
@@ -22,7 +33,7 @@ export function BlogCard({ post, index }: BlogCardProps) {
       }}
     >
       {/* Accent top border with gradient */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-primary to-primary/60" />
       
       <Link href={`/blog/${post.slug}`} className="block h-full">
         <div className="p-6">

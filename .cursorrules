@@ -1,0 +1,72 @@
+# Resume App Code Rules
+
+## Imports and Exports
+- Use named exports for components: `export function Component()` or `export const Component = ()`
+- Import from aliases: Use `@/components/*` instead of relative paths
+- Group imports: React/Next.js first, then third-party, then internal imports
+- Sort imports alphabetically within each group
+
+## File Structure
+- One component per file unless components are tightly coupled
+- Filenames should be kebab-case.tsx for components, kebab-case.ts for utilities
+- Page components go in app/*/page.tsx
+- Reusable UI components go in components/ui/
+- Layout components go in components/
+- Utilities go in lib/
+- Group server actions by feature in app/actions/ directory
+
+## TypeScript
+- Always define proper types for props using interfaces
+- Name interfaces with suffix: ComponentProps, e.g., `interface ButtonProps`
+- Avoid any types whenever possible
+- Use React.ReactNode for children props
+
+## Component Style
+- Use functional components with arrow syntax for smaller components
+- Use function declaration for larger, more complex components
+- Always use explicit return types for functions that return JSX: `function Component(): JSX.Element`
+- Use React.forwardRef for components that need ref forwarding
+
+## CSS and Styling
+- Use Tailwind CSS for styling
+- Use the cn() utility from @/lib/utils for conditional class names
+- Follow the shadcn/ui pattern for component variants using cva()
+- Use CSS variables for theming in conjunction with next-themes
+
+## MDX Content
+- Use custom components from MDXProvider for consistent styling
+- Properly handle code blocks with syntax highlighting
+- Error handling for MDX parsing should be user-friendly
+
+## State Management
+- Use React hooks for local state
+- Prefer useReducer for complex state
+- Keep state as close to where it's used as possible
+
+## Server Actions (Next.js 15)
+- Separate data logic from presentation
+- Centralize API calls in server actions
+- Organize actions by feature in dedicated directories
+- Return data, not JSX from server actions
+- Add proper error handling with clear error messages
+
+## Performance
+- Use client components only when necessary
+- Use React 19 features like useFormStatus and useOptimistic when appropriate
+- Memoize expensive calculations with useMemo
+- Optimize re-renders with useCallback for event handlers
+- Use Next.js Image component for images
+- Consider using the experimental React Compiler for automatic memoization
+
+## Accessibility
+- Ensure proper keyboard navigation works
+- Maintain proper heading hierarchy
+- Support both light and dark themes
+- Use shadcn/ui components which have built-in accessibility features
+
+## Code Quality
+- Follow ESLint rules defined in eslint.config.mjs
+- Keep component files under 250 lines
+- Write clear, self-documenting code
+- Add JSDoc comments for complex functions
+- Use the "after" API for code that needs to run after response streaming

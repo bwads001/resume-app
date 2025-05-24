@@ -9,7 +9,7 @@ Connect with me: [LinkedIn](https://linkedin.com/in/bryanwadsworth)
 
 ## 🛠 Tech Stack
 
-- [Next.js 14](https://nextjs.org/)
+- [Next.js 15](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shadcn UI](https://ui.shadcn.com/)

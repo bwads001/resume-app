@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
+import OpenGraphImage from '@/components/OpenGraphImage'
 
 // Define custom components for MDX files
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -58,5 +59,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     // Merge with any components passed in
     ...components,
+    // Register our custom OpenGraphImage component
+    OpenGraphImage,
   }
 } 

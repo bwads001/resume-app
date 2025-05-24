@@ -2,9 +2,13 @@ import { Button } from "@/components/ui/button"
 import { FileDown, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
+/**
+ * Hero component for the homepage with gradient background and call-to-action buttons
+ * @returns {JSX.Element} - The hero section with title, subtitle and action buttons
+ */
 export function Hero() {
   return (
-    <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-background pb-18 md:pb-32 relative">
+    <div className="bg-linear-to-br from-primary/20 via-primary/10 to-background pb-18 md:pb-32 relative">
       <div className="container mx-auto px-4 py-20 md:py-40 space-y-8">
         <div className="space-y-4">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
