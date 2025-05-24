@@ -31,12 +31,6 @@ export function Header() {
               Home
             </Link>
             <Link 
-              href="/projects" 
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Projects
-            </Link>
-            <Link 
               href="/#skills" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
@@ -47,6 +41,12 @@ export function Header() {
               className="text-sm font-medium transition-colors hover:text-primary"
             >
               Experience
+            </Link>
+            <Link 
+              href="/projects" 
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Projects
             </Link>
             <Link 
               href="/blog" 
@@ -107,13 +107,6 @@ export function Header() {
               Home
             </Link>
             <Link 
-              href="/projects" 
-              className="block text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link 
               href="/#skills" 
               className="block text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
@@ -126,6 +119,13 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Experience
+            </Link>
+            <Link 
+              href="/projects" 
+              className="block text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Projects
             </Link>
             <Link 
               href="/blog" 
