@@ -1,26 +1,24 @@
 export const skills = {
-    "Programming Languages & Frameworks": [
-        "TypeScript",
+    "Full Stack Development": [
         "JavaScript",
+        "TypeScript",
         "Python",
         "Node.js",
-        "Go",
-        "PHP",
-        "C#",
-    ],
-    "Frontend Development": [
-        "Next.js",
+        "Vite",
         "React",
+        "Next.js",
+        "REST APIs",
+        "GraphQL",
+        "Express",
+        "C#",
+        "PHP",
+        "Go",
+    ],
+    "UI Development & Tooling": [
         "Tailwind CSS",
         "Shadcn",
         "Storybook",
         "v0.dev",
-    ],
-    "Backend Development": [
-        "Express",
-        "Next.js Server Actions",
-        "REST APIs",
-        "GraphQL",
     ],
     "Mobile Development": [ 
         "React Native",
@@ -98,7 +96,6 @@ export const skills = {
     ],
     "AI & Machine Learning": [
         "OpenAI",
-        "Anthropic",
         "Gemini",
         "Claude",
         "Cursor",
@@ -107,6 +104,9 @@ export const skills = {
         "Prompt Engineering",
         "Vue (AI Video)",
         "Kling AI",
-        "Text-to-Speech Models",
+        "ElevenLabs",
+        "OpenAI Realtime API",
+        "SesameCSM",
+        "AI Agents"
     ],
 }; 
