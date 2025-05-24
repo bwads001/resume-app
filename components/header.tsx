@@ -31,6 +31,18 @@ export function Header() {
               Home
             </Link>
             <Link 
+              href="/#skills" 
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Skills
+            </Link>
+            <Link 
+              href="/#experience" 
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
+              Experience
+            </Link>
+            <Link 
               href="/blog" 
               className="text-sm font-medium transition-colors hover:text-primary"
             >
@@ -87,6 +99,20 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
+            </Link>
+            <Link 
+              href="/#skills" 
+              className="block text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Skills
+            </Link>
+            <Link 
+              href="/#experience" 
+              className="block text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Experience
             </Link>
             <Link 
               href="/blog" 
