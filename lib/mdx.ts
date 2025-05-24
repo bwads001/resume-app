@@ -12,6 +12,7 @@ export interface Article {
   summary: string;
   tags: string[];
   content: string;
+  image?: string;
 }
 
 export async function getAllArticles(): Promise<Article[]> {

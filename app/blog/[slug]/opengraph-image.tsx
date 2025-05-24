@@ -37,6 +37,7 @@ function WLogo({ size = 120 }: { size?: number }) {
 export default async function Image({ params }: { params: { slug: string } }) {
   let title = '';
   let summary = '';
+  let imageUrl = '';
   
   try {
     const { slug } = params;
@@ -48,6 +49,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
       console.log("Our data is: ", data);
       if (data.title) title = data.title;
       if (data.summary) summary = data.summary;
+      if (data.image) imageUrl = data.image;
     }
   } catch (error) {
     console.error('Error fetching metadata for OpenGraph image:', error);
@@ -55,97 +57,109 @@ export default async function Image({ params }: { params: { slug: string } }) {
   
   return new ImageResponse(
     (
-      <div
-        style={{
-          background: 'linear-gradient(135deg, hsl(210, 100%, 15%), hsl(200, 100%, 25%))',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: '60px',
-          fontFamily: 'system-ui, sans-serif',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        {/* Decorative elements */}
-        <div style={{
-          position: 'absolute',
-          bottom: '-100px',
-          right: '-100px',
-          width: '400px',
-          height: '400px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)',
-        }} />
-        
-        <div style={{
-          position: 'absolute',
-          top: '-50px',
-          left: '-50px',
-          width: '300px',
-          height: '300px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%)',
-        }} />
-        
-        {/* Logo in top right */}
-        <WLogo size={200} />
-        
-        {/* Title area - larger and prominent */}
+      imageUrl
+      ? (
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}${imageUrl}`}
+          alt={title || alt}
+          width={size.width}
+          height={size.height}
+          style={{ objectFit: 'cover' }}
+        />
+      )
+      : (
         <div
           style={{
-            fontSize: '60px',
-            fontWeight: 'bold',
-            color: 'white',
-            lineHeight: '1.2',
-            marginBottom: '28px',
-            maxWidth: '90%',
-            marginTop: '-20px',
-          }}
-        >
-          {title}
-        </div>
-        
-        {/* Stylish separator */}
-        <div style={{
-          width: '600px',
-          height: '4px',
-          background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%)',
-          marginLeft: '20px',
-          marginBottom: '32px',
-          borderRadius: '2px',
-        }} />
-        
-        {/* Summary area with improved styling */}
-        <div
-          style={{
-            fontSize: '26px',
-            color: 'rgba(255, 255, 255, 0.9)',
-            lineHeight: '1.4',
-            maxWidth: '85%',
-            maxHeight: '135px',
+            background: 'linear-gradient(135deg, hsl(210, 100%, 15%), hsl(200, 100%, 25%))',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '60px',
+            fontFamily: 'system-ui, sans-serif',
+            position: 'relative',
             overflow: 'hidden',
           }}
         >
-          {summary || "Explore insights and experiences from Bryan Wadsworth's blog"}
-        </div>
-        
-        {/* Subtle branded element at bottom */}
-        <div 
-          style={{
+          {/* Decorative elements */}
+          <div style={{
             position: 'absolute',
-            bottom: '40px',
-            right: '40px',
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontSize: '20px',
-            fontWeight: 'bold',
-          }}
-        >
-          bryanwadsworth.com
+            bottom: '-100px',
+            right: '-100px',
+            width: '400px',
+            height: '400px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)',
+          }} />
+          
+          <div style={{
+            position: 'absolute',
+            top: '-50px',
+            left: '-50px',
+            width: '300px',
+            height: '300px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%)',
+          }} />
+          
+          {/* Logo in top right */}
+          <WLogo size={200} />
+          
+          {/* Title area - larger and prominent */}
+          <div
+            style={{
+              fontSize: '60px',
+              fontWeight: 'bold',
+              color: 'white',
+              lineHeight: '1.2',
+              marginBottom: '28px',
+              maxWidth: '90%',
+              marginTop: '-20px',
+            }}
+          >
+            {title}
+          </div>
+          
+          {/* Stylish separator */}
+          <div style={{
+            width: '600px',
+            height: '4px',
+            background: 'linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%)',
+            marginLeft: '20px',
+            marginBottom: '32px',
+            borderRadius: '2px',
+          }} />
+          
+          {/* Summary area with improved styling */}
+          <div
+            style={{
+              fontSize: '26px',
+              color: 'rgba(255, 255, 255, 0.9)',
+              lineHeight: '1.4',
+              maxWidth: '85%',
+              maxHeight: '135px',
+              overflow: 'hidden',
+            }}
+          >
+            {summary || "Explore insights and experiences from Bryan Wadsworth's blog"}
+          </div>
+          
+          {/* Subtle branded element at bottom */}
+          <div 
+            style={{
+              position: 'absolute',
+              bottom: '40px',
+              right: '40px',
+              color: 'rgba(255, 255, 255, 0.7)',
+              fontSize: '20px',
+              fontWeight: 'bold',
+            }}
+          >
+            bryanwadsworth.com
+          </div>
         </div>
-      </div>
+      )
     ),
     size
   )

@@ -25,7 +25,8 @@ export async function fetchArticleMetadata(slug: string) {
       status: 'success',
       title: article.title || formatSlug(slug),
       summary: article.summary || '',
-      date: article.date || ''
+      date: article.date || '',
+      image: article.image || ''
     };
   } catch (error) {
     console.error(`Error fetching article metadata for ${slug}:`, error);

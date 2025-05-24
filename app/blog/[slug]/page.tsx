@@ -18,6 +18,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
   
+  const ogImages = [];
+  if (article.image) {
+    ogImages.push({
+      url: article.image,
+      width: 1200, // You might want to adjust these or get them from the image itself
+      height: 630,
+      alt: article.title,
+    });
+  }
+  
   return {
     title: article.title,
     description: article.summary,
@@ -31,6 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: article.date,
       tags: article.tags,
       url: `/blog/${article.slug}`,
+      images: ogImages.length > 0 ? ogImages : undefined,
     },
     twitter: {
       card: 'summary_large_image',
