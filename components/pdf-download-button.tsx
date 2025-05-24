@@ -5,6 +5,7 @@ import { FileDown } from 'lucide-react'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { ResumePDF } from '@/components/resume-pdf'
 import { contact } from '@/data/contact'
+import { useEffect, useState } from 'react'
 
 interface PDFDownloadButtonProps {
   name?: string
@@ -25,6 +26,26 @@ export function PDFDownloadButton({
   website = contact.website,
   className = ""
 }: PDFDownloadButtonProps) {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Show a placeholder button during SSR/hydration
+  if (!isClient) {
+    return (
+      <Button 
+        size="lg" 
+        className={`bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 ${className}`}
+        disabled
+      >
+        Download Resume
+        <FileDown className="ml-2 h-4 w-4" />
+      </Button>
+    )
+  }
+
   return (
     <PDFDownloadLink
       document={
