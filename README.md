@@ -1,81 +1,68 @@
 # Bryan Wadsworth - Resume Website
 
-A modern, responsive resume website built with Next.js 14, TypeScript, Tailwind CSS, and Shadcn UI. I created this project after leaving GoDaddy to explore the latest frontend technologies while building something useful for others.
+A modern, responsive resume website showcasing my technical expertise through practical application. Built with Next.js 15, TypeScript, Tailwind CSS, and Shadcn UI to demonstrate proficiency with cutting-edge frontend technologies and best practices.
 
 ## 🚀 Live Demo
 
-Visit the live site: [bryanwadsworth.com](https://bryanwadsworth.com)  
-Connect with me: [LinkedIn](https://linkedin.com/in/bryanwadsworth)
+Visit my resume: [bryanwadsworth.com](https://bryanwadsworth.com)  
+Connect with me: [LinkedIn](https://linkedin.com/in/bryan-wadsworth-a90b4013)
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack & Architecture
 
-- [Next.js 15](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Shadcn UI](https://ui.shadcn.com/)
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/) for type safety
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) for utility-first design
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) for consistent, accessible components
+- **PDF Generation**: [@react-pdf/renderer](https://react-pdf.org/) for dynamic resume PDFs
+- **Deployment**: [Vercel](https://vercel.com/) with automated CI/CD
 
-## 🎯 Using This Template
+## ✨ Technical Highlights
 
-Feel free to use this code as a template for your own resume! Here's how to get started:
+- **Dynamic PDF Generation**: Resume PDFs generated client-side from structured data
+- **Responsive Design**: Mobile-first approach with seamless tablet and desktop experiences  
+- **Performance Optimized**: Server-side rendering, image optimization, and lazy loading
+- **Accessibility**: WCAG compliant with keyboard navigation and screen reader support
+- **SEO Optimized**: Dynamic metadata generation and semantic HTML structure
+- **Theme System**: Dark/light mode with CSS variables and next-themes integration
+- **Type Safety**: Comprehensive TypeScript implementation with strict mode
+- **Modern React**: Utilizes React 19 features and Next.js 15 capabilities
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/resume-website.git
-cd resume-website
+## 🏗 Architecture & Code Quality
+
+This codebase demonstrates:
+- **Clean Architecture**: Separation of concerns with organized data layer
+- **Component Design**: Reusable, composable UI components following best practices
+- **Data Management**: Structured data approach enabling dynamic content generation
+- **Error Handling**: Graceful fallbacks and user-friendly error states
+- **Build Optimization**: Static generation where possible, dynamic rendering where needed
+- **Code Standards**: ESLint configuration with consistent formatting and patterns
+
+## 📊 Project Structure
+
+```
+├── app/                 # Next.js App Router pages and layouts
+├── components/          # Reusable UI components
+├── data/               # Structured resume data (experience, skills, projects)
+├── lib/                # Utility functions and configurations
+└── public/             # Static assets and images
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
+## 🎯 Why This Approach?
 
-3. Customize your data:
-   - Navigate to `/data` directory
-   - Edit `experience.ts` with your work history
-   - Modify `skills.ts` with your technical skills
-   - Update `links.ts` with your social media profiles
+This architecture provides several key advantages:
+- **Technical Demonstration**: Showcases proficiency with modern web technologies in a real-world application
+- **Data Integrity**: Single source of truth for resume information with type-safe data structures
+- **Maintainability**: Structured data approach enables rapid content updates without code changes
+- **Problem-Solving**: Demonstrates complex technical implementation including PDF generation and SSR challenges
+- **Portfolio Evidence**: Public codebase serves as concrete examples of development practices and code quality
 
-4. Customize the theme:
-   - Theme colors are defined in `app/globals.css`
-   - Modify the `:root` and `.dark` CSS variables to match your preferred color scheme
-   - Example color customization:
-```css
-:root {
-  --primary: 199 89% 48%; /* Your brand color */
-  --secondary: 210 40% 96.1%;
-  /* ... other color variables */
-}
-```
+## 🤝 Open Source
 
-5. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
+This code is publicly available to demonstrate my development practices and can serve as inspiration for other developers building similar projects. The implementation showcases enterprise-level code quality and architectural decisions.
 
-## 📱 Features
+## 📞 Contact
 
-- Fully responsive design
-- Dark/light mode support
-- SEO optimized
-- Accessible UI components
-- Interactive skill cards
-- Smooth animations
-- Wave transitions between sections
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 💡 About
-
-I built this project to keep my skills sharp and provide a useful template for other developers. The codebase demonstrates modern React patterns, responsive design, and clean architecture.
-
-For questions or collaborations, reach out on [LinkedIn](https://linkedin.com/in/bryanwadsworth).
+For professional inquiries or technical discussions:
+- **Email**: wadsworth.bryan@gmail.com
+- **LinkedIn**: [bryan-wadsworth-a90b4013](https://linkedin.com/in/bryan-wadsworth-a90b4013)
+- **Website**: [bryanwadsworth.com](https://bryanwadsworth.com)
