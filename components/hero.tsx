@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { FileDown, Linkedin } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { PDFDownloadButton } from '@/components/pdf-download-button'
 
 /**
  * Hero component for the homepage with gradient background and call-to-action buttons
@@ -10,23 +12,31 @@ export function Hero() {
   return (
     <div className="bg-linear-to-br from-primary/20 via-primary/10 to-background pb-18 md:pb-32 relative">
       <div className="container mx-auto px-4 py-20 md:py-40 space-y-8">
-        <div className="space-y-4">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Bryan Wadsworth
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-            Platform Engineering Leader
-          </p>
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 space-y-4">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              Bryan Wadsworth
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
+              Platform Engineering Leader
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              <Image
+                src="/images/Bryan.jpg"
+                alt="Bryan Wadsworth - Platform Engineering Leader"
+                fill
+                className="rounded-full object-cover border-4 border-background shadow-xl"
+                priority
+              />
+            </div>
+          </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90" asChild>
-            <Link href="/Bryan Wadsworth Resume.pdf" target="_blank" rel="noopener noreferrer">
-              Download Resume
-              <FileDown className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <PDFDownloadButton />
           <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-primary-foreground" asChild>
-            <Link href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/bryan-wadsworth-a90b4013/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-4 w-4" />
               Connect on LinkedIn
             </Link>
