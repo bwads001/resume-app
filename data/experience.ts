@@ -12,10 +12,11 @@ export const jobs: Job[] = [
     company: "Bespoke Tech Solutions",
     period: "08/2023 - Present",
     description: [
-      "Guiding software development processes in a startup environment, leveraging extensive experience in platform engineering.",
-      "Implementing CI/CD pipelines to streamline development and deployment workflows.",
-      "Crafting solutions using modern tech stacks for diverse projects, including business apps, mobile apps, websites, and games.",
-      "Managing platform engineering while expanding responsibilities to encompass broader technology strategy and implementation."
+      "Guiding software development processes in a startup environment, leveraging my experience in platform engineering and new AI-driven development workflows.",
+      "Implementing automated CI/CD pipelines on AWS and GCP with AI enhancements to streamline development, perform intelligent code review, automate testing, and enable smart deployment strategies.",
+      "Integrating AI tools and frameworks into development processes, including code generation, automated testing, performance optimization, and intelligent debugging across all project types.",
+      "Crafting solutions using modern tech stacks enhanced with AI capabilities for diverse projects, including business apps, mobile apps, websites, and games.",
+      "Managing platform engineering while expanding responsibilities to encompass broader technology strategy, AI implementation, and intelligent automation across all business processes."
     ],
     url: "https://mybts.io/"
   },
