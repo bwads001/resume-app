@@ -46,6 +46,7 @@ export const skills = {
         "Prisma ORM",
         "Memcached",
         "RabbitMQ",
+        "Kafka",
     ],
     "Cloud Platforms & Infrastructure": [
         "AWS EC2",

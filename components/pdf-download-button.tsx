@@ -12,8 +12,6 @@ interface PDFDownloadButtonProps {
   jobTitle?: string
   email?: string
   location?: string
-  linkedin?: string
-  website?: string
   className?: string
 }
 
@@ -22,8 +20,6 @@ export function PDFDownloadButton({
   jobTitle = contact.jobTitle,
   email = contact.email,
   location = contact.location,
-  linkedin = contact.linkedin,
-  website = contact.website,
   className = ""
 }: PDFDownloadButtonProps) {
   const [isClient, setIsClient] = useState(false)
@@ -37,7 +33,7 @@ export function PDFDownloadButton({
     return (
       <Button 
         size="lg" 
-        className={`bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 ${className}`}
+        className={`bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 cursor-pointer ${className}`}
         disabled
       >
         Download Resume
@@ -54,8 +50,6 @@ export function PDFDownloadButton({
           jobTitle={jobTitle}
           email={email}
           location={location}
-          linkedin={linkedin}
-          website={website}
         />
       }
       fileName="Bryan_Wadsworth_Resume.pdf"
@@ -63,7 +57,7 @@ export function PDFDownloadButton({
       {({ loading }) => (
         <Button 
           size="lg" 
-          className={`bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 ${className}`}
+          className={`bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90 cursor-pointer ${className}`}
           disabled={loading}
         >
           {loading ? 'Generating PDF...' : 'Download Resume'}

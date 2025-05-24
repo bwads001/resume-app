@@ -24,6 +24,9 @@ export default function ProjectsPage() {
           </p>
         </div>
 
+        {/* Subtle separator */}
+        <div className="border-t border-border/50 mx-6"></div>
+
         {/* Projects Grid */}
         <div className="grid gap-8 md:gap-12">
           {projects.map((project, index) => (
@@ -31,44 +34,44 @@ export default function ProjectsPage() {
               key={index}
               className="group relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex flex-col lg:flex-row">
+              {/* Centered Project Title and Meta */}
+              <div className="text-center p-6 pb-4">
+                <h2 className="text-2xl font-bold mb-3">{project.title}</h2>
+                <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-4">
+                  <span className="bg-primary/10 text-primary px-2 py-1 rounded-md">
+                    {project.category}
+                  </span>
+                  <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded-md">
+                    {project.status}
+                  </span>
+                </div>
+                <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  {project.longDescription || project.description}
+                </p>
+              </div>
+
+              {/* Subtle separator */}
+              <div className="border-t border-border/50 mx-6"></div>
+
+              <div className="flex flex-col lg:flex-row px-6 pb-6 gap-8 lg:gap-12 pt-6">
                 {/* Project Image */}
                 {project.image && (
-                  <div className="lg:w-1/2 relative">
+                  <div className="lg:w-1/2">
                     <div className="aspect-video relative">
                       <Image
                         src={project.image}
                         alt={`${project.title} screenshot`}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-lg border-2 border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.01] cursor-pointer"
                       />
                     </div>
                   </div>
                 )}
                 
-                {/* Project Info */}
-                <div className={`flex-1 p-8 ${project.image ? 'lg:w-1/2' : ''}`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                        <span className="bg-primary/10 text-primary px-2 py-1 rounded-md">
-                          {project.category}
-                        </span>
-                        <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded-md">
-                          {project.status}
-                        </span>
-                        <span>{project.period}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-muted-foreground mb-4">
-                    {project.longDescription || project.description}
-                  </p>
-
+                {/* Project Details */}
+                <div className="lg:w-1/2 space-y-6">
                   {/* Highlights */}
-                  <div className="mb-6">
+                  <div>
                     <h3 className="font-semibold mb-3">Key Highlights:</h3>
                     <ul className="space-y-2">
                       {project.highlights.map((highlight, highlightIndex) => (
@@ -81,7 +84,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-6">
+                  <div>
                     <h3 className="font-semibold mb-3">Technologies:</h3>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (

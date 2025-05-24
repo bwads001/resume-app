@@ -1,118 +1,162 @@
 import React from 'react'
-import { Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer'
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer'
 import { skills } from '@/data/skills'
 import { jobs, Job } from '@/data/experience'
 import { projects, Project } from '@/data/projects'
 import { contact } from '@/data/contact'
 
-// Register fonts for better typography
-Font.register({
-  family: 'Inter',
-  fonts: [
-    { src: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2' },
-    { src: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hiJ-Ek-_EeA.woff2', fontWeight: 'bold' },
-  ],
-})
-
+// Using built-in fonts for better reliability
 const styles = StyleSheet.create({
   page: {
-    fontFamily: 'Inter',
+    fontFamily: 'Helvetica',
     fontSize: 10,
     lineHeight: 1.4,
-    color: '#1f2937',
-    padding: 40,
+    color: '#333333',
+    padding: 35,
   },
   header: {
     marginBottom: 30,
     textAlign: 'center',
   },
   name: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#111827',
+    fontSize: 24,
+    fontFamily: 'Helvetica-Bold',
+    color: '#000000',
     marginBottom: 8,
   },
   title: {
-    fontSize: 16,
-    color: '#6b7280',
-    marginBottom: 4,
+    fontSize: 14,
+    color: '#666666',
+    marginBottom: 15,
   },
   contact: {
     fontSize: 10,
-    color: '#6b7280',
-    marginTop: 8,
+    color: '#666666',
+  },
+  contactLine: {
+    marginBottom: 3,
   },
   section: {
-    marginBottom: 25,
+    marginBottom: 20,
   },
   sectionTitle: {
     fontSize: 14,
-    fontWeight: 'bold',
-    color: '#111827',
+    fontFamily: 'Helvetica-Bold',
+    color: '#000000',
     marginBottom: 12,
-    borderBottom: '1px solid #e5e7eb',
-    paddingBottom: 4,
+    textTransform: 'uppercase',
+    paddingBottom: 3,
+    borderBottomWidth: 1,
+    borderBottomColor: '#cccccc',
   },
   jobContainer: {
-    marginBottom: 20,
+    marginBottom: 18,
   },
   jobHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 6,
+    marginBottom: 4,
   },
   jobTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#111827',
+    fontSize: 12,
+    fontFamily: 'Helvetica-Bold',
+    color: '#000000',
   },
   company: {
     fontSize: 10,
-    color: '#374151',
+    color: '#666666',
     marginTop: 2,
   },
   period: {
-    fontSize: 9,
-    color: '#6b7280',
+    fontSize: 10,
+    color: '#666666',
     textAlign: 'right',
   },
   description: {
-    marginTop: 6,
+    marginTop: 4,
   },
   bullet: {
-    fontSize: 9,
-    lineHeight: 1.5,
+    fontSize: 10,
+    lineHeight: 1.3,
     marginBottom: 3,
-    color: '#374151',
+    color: '#333333',
   },
-  skillsGrid: {
+  skillsPageContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 15,
+  },
+  skillsColumnLeft: {
+    width: '50%',
+    paddingRight: 10, // Creates a gutter between columns
+  },
+  skillsColumnRight: {
+    width: '50%',
+    paddingLeft: 10,  // Creates a gutter between columns
   },
   skillCategory: {
-    width: '48%',
-    marginBottom: 12,
+    marginBottom: 18, // Adjusted from 20 for slightly tighter vertical packing if needed
   },
   skillCategoryTitle: {
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#111827',
-    marginBottom: 6,
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: '#000000',
+    marginBottom: 7,
   },
-  skillsList: {
+  skillsTagContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 4,
+    marginTop: 3,
   },
-  skill: {
-    fontSize: 8,
-    backgroundColor: '#f3f4f6',
-    color: '#374151',
-    padding: '3 6',
+  skillTag: {
+    fontSize: 9.5,
+    fontFamily: 'Helvetica',
+    color: '#1A365D',
+    backgroundColor: '#EBF8FF',
+    paddingHorizontal: 9,
+    paddingTop: 5,
+    paddingBottom: 3,
+    borderRadius: 5,
+    marginRight: 7,
+    marginBottom: 7,
+    borderWidth: 1,
+    borderColor: '#BEE3F8',
+    lineHeight: 1.05,
+  },
+  projectContainer: {
+    marginBottom: 15,
+    flexDirection: 'row',
+    gap: 10,
+  },
+  projectImage: {
+    width: 120,
+    height: 80,
     borderRadius: 3,
-    marginBottom: 3,
+    border: '1px solid #dddddd',
+  },
+  projectContent: {
+    flex: 1,
+  },
+  projectTitle: {
+    fontSize: 12,
+    fontFamily: 'Helvetica-Bold',
+    color: '#000000',
+    marginBottom: 2,
+  },
+  projectDescription: {
+    fontSize: 10,
+    color: '#333333',
+    marginBottom: 4,
+    lineHeight: 1.3,
+  },
+  projectTech: {
+    fontSize: 9,
+    color: '#666666',
+    fontFamily: 'Helvetica-Oblique',
+  },
+  projectUrl: {
+    fontSize: 9,
+    color: '#0077cc', // A blue color to suggest a link
+    fontFamily: 'Helvetica-Oblique',
+    marginTop: 3,
   },
 })
 
@@ -121,7 +165,6 @@ interface ResumePDFProps {
   jobTitle?: string
   email?: string
   location?: string
-  linkedin?: string
   website?: string
 }
 
@@ -130,9 +173,13 @@ export function ResumePDF({
   jobTitle = contact.jobTitle,
   email = contact.email,
   location = contact.location,
-  linkedin = contact.linkedin,
   website = contact.website
 }: ResumePDFProps): React.JSX.Element {
+  const skillEntries = Object.entries(skills);
+  const midpoint = Math.ceil(skillEntries.length / 2);
+  const leftColumnSkills = skillEntries.slice(0, midpoint);
+  const rightColumnSkills = skillEntries.slice(midpoint);
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -141,12 +188,12 @@ export function ResumePDF({
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.title}>{jobTitle}</Text>
           <View style={styles.contact}>
-            <Text>
-              {[email, location].filter(Boolean).join(' • ')}
-            </Text>
-            <Text>
-              {[linkedin, website].filter(Boolean).join(' • ')}
-            </Text>
+            <View style={styles.contactLine}>
+              <Text>{[email, location].filter(Boolean).join(' • ')}</Text>
+            </View>
+            <View style={styles.contactLine}>
+              <Text>{website}</Text>
+            </View>
           </View>
         </View>
 
@@ -154,7 +201,7 @@ export function ResumePDF({
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Professional Experience</Text>
           {jobs.map((job: Job, index: number) => (
-            <View key={index} style={styles.jobContainer}>
+            <View key={index} style={styles.jobContainer} wrap={false}>
               <View style={styles.jobHeader}>
                 <View>
                   <Text style={styles.jobTitle}>{job.title}</Text>
@@ -176,46 +223,59 @@ export function ResumePDF({
         {/* Skills Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Technical Skills</Text>
-          <View style={styles.skillsGrid}>
-            {Object.entries(skills).map(([category, skillList]) => (
-              <View key={category} style={styles.skillCategory}>
-                <Text style={styles.skillCategoryTitle}>{category}</Text>
-                <View style={styles.skillsList}>
-                  {skillList.map((skill: string, index: number) => (
-                    <Text key={index} style={styles.skill}>
-                      {skill}
-                    </Text>
-                  ))}
+          <View style={styles.skillsPageContainer}>
+            <View style={styles.skillsColumnLeft}>
+              {leftColumnSkills.map(([category, skillList]) => (
+                <View key={category} style={styles.skillCategory} wrap={false}>
+                  <Text style={styles.skillCategoryTitle}>{category}</Text>
+                  <View style={styles.skillsTagContainer}>
+                    {skillList.map((skill: string, skillIndex: number) => (
+                      <Text key={skillIndex} style={styles.skillTag}>
+                        {skill}
+                      </Text>
+                    ))}
+                  </View>
                 </View>
-              </View>
-            ))}
+              ))}
+            </View>
+            <View style={styles.skillsColumnRight}>
+              {rightColumnSkills.map(([category, skillList]) => (
+                <View key={category} style={styles.skillCategory} wrap={false}>
+                  <Text style={styles.skillCategoryTitle}>{category}</Text>
+                  <View style={styles.skillsTagContainer}>
+                    {skillList.map((skill: string, skillIndex: number) => (
+                      <Text key={skillIndex} style={styles.skillTag}>
+                        {skill}
+                      </Text>
+                    ))}
+                  </View>
+                </View>
+              ))}
+            </View>
           </View>
         </View>
 
         {/* Key Projects Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Key Projects</Text>
-          {projects.slice(0, 2).map((project: Project, index: number) => (
-            <View key={index} style={styles.jobContainer}>
-              <View style={styles.jobHeader}>
-                <View>
-                  <Text style={styles.jobTitle}>{project.title}</Text>
-                  <Text style={styles.company}>{project.category} • {project.status}</Text>
-                </View>
-                <Text style={styles.period}>{project.period}</Text>
-              </View>
-              <View style={styles.description}>
-                <Text style={styles.bullet}>
-                  • {project.description}
+          {projects.slice(0, 2).map((project: Project, projectIndex: number) => (
+            <View key={projectIndex} style={styles.projectContainer} wrap={false}>
+              {project.image && (
+                <Image style={styles.projectImage} src={project.image} />
+              )}
+              <View style={styles.projectContent}>
+                <Text style={styles.projectTitle}>{project.title}</Text>
+                <Text style={styles.projectDescription}>
+                  {project.description}
                 </Text>
-                {project.highlights.slice(0, 2).map((highlight: string, highlightIndex: number) => (
-                  <Text key={highlightIndex} style={styles.bullet}>
-                    • {highlight}
+                <Text style={styles.projectTech}>
+                  Technologies: {project.technologies.slice(0, 5).join(', ')}
+                </Text>
+                {project.url && (
+                  <Text style={styles.projectUrl}>
+                    {project.url}
                   </Text>
-                ))}
-                <Text style={styles.bullet}>
-                  • Technologies: {project.technologies.slice(0, 6).join(', ')}
-                </Text>
+                )}
               </View>
             </View>
           ))}
