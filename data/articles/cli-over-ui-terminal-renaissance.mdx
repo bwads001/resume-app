@@ -1,0 +1,158 @@
+---
+id: "6"
+title: "CLI > UI: Why AI Agents Are Bringing Developers Back to the Terminal"
+slug: "cli-over-ui-terminal-renaissance"
+date: "2025-03-25"
+summary: "The shift to terminal-based AI isn't nostalgia—it's about agents, hooks, and workflows that GUI tools can't match. Here's why I abandoned my IDE for Claude Code."
+tags: ["AI", "Development", "Terminal", "Claude Code", "Productivity"]
+---
+
+# CLI > UI: Why AI Agents Are Bringing Developers Back to the Terminal
+
+I spent years wanting the terminal to click with me. It seemed right but never felt easy. Reading man pages just to find a flag when GUI tools had a simple checkbox? I needed a manual for everything—there was simply too much to remember. Working on Windows PCs in the 2000s made avoiding it easy enough. Filezilla handled FTP, Notepad++ then Sublime and eventually VSCode for coding. When I needed SSH on the hosting team at work, we'd fire up PuTTY and make the best of it.
+
+Now AI is bringing me back to the terminal—not for nostalgia, but for capabilities that simply don't exist in GUI-based tools.
+
+In 2021, I tried Codeium—a VSCode extension that promised AI-powered autocomplete. Not having to type out boilerplate code was amazing, and it did have some codebase context even in those early stages. But it didn't always work, and its lack of broader context meant it was essentially sophisticated autocomplete. Type-pause-tab became my rhythm.
+
+When GitHub Copilot arrived, I gave it a shot, but it was somehow both too much and too little. I could never find a permanent place for it in my workflow.
+
+Cursor changed the game. We could chat with AI, interrogate our codebase, analyze issues, and interact with projects in a completely different way. As they shifted to agentic patterns and added tool use, the paradigm shifted. Auto-linting, iterative updates—agents could handle substantial work. 
+
+I found myself leading a team instead of solo coding. I was reviewing more code than I could possibly write.
+
+But there was still a fundamental issue: context. 200k tokens, 1M tokens—it didn't matter. Once codebases grow to hundreds of thousands of lines, it becomes unmanageable. A few updates work well, then inevitably your conversation gets too long, you have too many iterations, or you're dealing with mile-long error logs. You end up starting a new chat and hoping you can reconnect the dots.
+
+
+## When YouTube Stopped Talking About Cursor
+
+I spend too much time watching YouTube for AI news (probably like most developers these days). Something interesting happened recently—maybe a month ago. Everyone just stopped talking about Cursor.
+
+One day my feed was full of "Cursor vs this" and "10 Cursor tricks," and suddenly it was all "Claude Code changed everything" and "Why I switched from Cursor to the terminal." The shift was so abrupt it was almost comical—as if every dev YouTuber got the same memo.
+
+At first I ignored it. Another AI coding tool? I was reasonably happy with Cursor. But the context problem was real, and these videos kept promising something different. Not just another IDE with AI bolted on, but agents that worked natively in the terminal, specialized for different tasks, with workflows that didn't break when conversations got too long.
+
+The shift to terminal-based AI tools wasn't just about Claude Code. Terminal environments give AI agents direct access to the full development ecosystem without the overhead of GUI abstractions.
+
+**Terminal-based agents give us enough simplicity to enable amazing complexity.** Sub-agents and hooks can automate entire workflows while eliminating context size issues by encapsulating heavy operations outside the main thread.
+
+## The Day Cursor's Pricing Made Me Jump Ship
+
+Cursor changed their pricing model, and my $20 monthly plan was suddenly consumed in 5 days. I was facing either a significant bill or being stuck with "auto" model selection to avoid usage-based API fees. With no transparency about what model "auto" was actually using, the black box kept getting bigger.
+
+I tried Cline with OpenRouter and Ollama models, but it wasn't quite there. Cursor's "auto" was actually better, which was frustrating. It was time to try Claude Code—Claude seemed to be leading the pack in terms of innovation.
+
+This is where Cursor's limitations really showed. I had to use Windows Terminal because the terminal in VSCode and Cursor itself was incredibly limiting. I couldn't even copy and paste whole error lists when running typechecks. Cursor's own usage of the terminal was limited, slow, and buggy—sometimes it would just sit there waiting in the terminal forever and you'd have to manually stop it and copy/paste the results yourself.
+
+I went straight to Windows Terminal. I just used tabs for Claude Code, my own commands, and the dev server, alongside my IDE.
+
+The fundamental difference between Cursor and Claude Code is how they handle context. With Claude Code's agents, I stopped thinking about context management entirely.
+
+Now I focus on documentation, workflows, and establishing solid practices. I write markdown docs that agents can reference. I set up hooks that enforce standards. I create aliases for common operations. Instead of manually orchestrating AI assistance, I'm building systems that leverage it effectively.
+
+## Sub-Agents: The Real "Ah-Ha" Moment
+
+Here's what most people don't realize about AI coding tools: context windows are finite, and most of your time in Cursor is spent managing what the AI can "see." You're constantly juggling which files to include, copying and pasting code snippets, explaining the same patterns repeatedly.
+
+Even after switching to Claude Max for Opus, I wasn't prepared for what sub-agents actually meant. I could define agent files with specific documentation and requirements, and they'd follow them consistently.
+
+I created a QA agent and a GitOps agent, each with their own context and requirements. I wasn't repeating myself anymore. The QA agent knew our testing standards, edge cases, accessibility requirements. The GitOps agent understood our branching strategy, commit message format, deployment procedures.
+
+The terminal speed difference is dramatic. In Cursor, using terminal commands through agents felt sluggish—waiting for it to recognize when output was complete or when errors occurred. Sometimes it was faster to cancel the command and manually paste the results. Claude Code leverages AWS CLI and other tools as quickly as it edits files.
+
+Why hunt through AWS Console dashboards when I can ask Claude to review CloudWatch logs? It assembles complex CLI calls with start times, end times, and filters instantly. I created an AWS Agent with documentation about our infrastructure preferences and standards. Now I can say "check the API errors from yesterday afternoon" and it knows which log groups to query, what patterns to search for, and how to format the report.
+
+```bash title="AWS Log Analysis with Specialized Agent"
+# Instead of clicking through CloudWatch console
+claude "analyze API errors from yesterday 2-6pm" --agent aws-ops
+
+# The agent knows our log groups, error patterns, and reporting format
+# Executes complex AWS CLI queries instantly
+# Returns formatted analysis with actionable insights
+```
+
+This isn't about avoiding GUIs for the sake of it—it's about speed and consistency. The terminal doesn't have loading spinners. It doesn't have pagination to click through. It doesn't forget your filters when you navigate away. And with specialized agents that understand your documentation, you're not starting from scratch every time.
+
+## From Coding to Orchestrating: My New Workflow
+
+I keep a backlog with planning docs now. When a feature comes up, I have an agent review it and create an implementation plan. Sometimes it nails it in one shot, sometimes I need to intervene and iterate (planning is where humans should stay involved anyway).
+
+If you want to try this workflow too, I've published my [multi-agent orchestration system on GitHub](https://github.com/bwads001/claude-code-agents). It includes the specialized agents I'm about to describe, plus workflow modes, quality gates, and all the documentation that makes it actually work.
+
+Once I have a solid plan, I send it to a dev orchestration agent who works with various specialized agents to build, review, QA, document, commit, push, and create a PR. Then I do code review and either request changes or merge.
+
+I mostly plan and review now. That's the reality of it.
+
+Think about that shift: from typing code all day to primarily planning features and reviewing implementations. The agents handle the implementation details, the testing, the documentation updates, even the git workflow. 
+
+My development cycle now looks like:
+1. Review backlog and planning docs
+2. Have an agent create implementation plan
+3. Review and refine the plan (stay involved here!)
+4. Send plan to orchestration agent
+5. Review the PR when it's ready
+6. Merge or request changes
+
+The entire build/test/document/commit cycle happens without me touching the keyboard. I'm not debugging syntax errors or hunting for missing semicolons. I'm thinking about architecture, user experience, and business logic.
+
+This isn't about being lazy—it's about operating at a different level. I can handle multiple features in parallel because I'm not stuck in implementation details. I can focus on quality and design because I'm not exhausted from repetitive tasks.
+
+## The Parallel Development Possibility
+
+While I haven't used it much in practice, Claude Code opens up interesting possibilities for parallel development—exploring multiple approaches simultaneously using git worktrees. This could be powerful for mature projects needing optimization, or new projects still finding their design voice.
+
+Imagine testing three different architectures for a feature at once, or exploring different UI treatments in parallel. It's more theory than my daily practice, but the capability is there when the right project needs it.
+
+## The Productivity Paradox I Actually Experienced
+
+Here's what I noticed switching from Cursor to Claude Code: with Cursor, I was busy but spent more time managing the conversation than building features. Generate code, debug it, explain what I wanted differently, debug again—that was the cycle.
+
+With terminal-based agents, I spend more time planning and less time debugging. The agents handle implementation while I focus on architecture and reviewing results. Instead of feeling productive because I'm typing prompts, I'm actually productive because I'm shipping features.
+
+The difference is real, not just perceived.
+
+## Why Terminals Beat IDEs for AI
+
+It comes down to real performance differences and workflow possibilities:
+
+**Speed**: VSCode is TypeScript in an Electron wrapper (essentially Chrome)—it has inherent limits. Cursor is a VSCode fork with the same constraints. When agents need to use terminal tools, that layer of abstraction creates lag. In the terminal, agents interact with CLI tools directly—no wrapper overhead.
+
+**Workflow Integration**: I don't use bash scripts—I use agents, hooks, and documentation. But the terminal opens up possibilities that GUIs can't match. Agents can work in GitHub Actions, automate release notes, handle AI code reviews. Moving these processes into CI/CD workflows is powerful.
+
+**Native Tool Access**: Why click through AWS Console when an agent can query CloudWatch directly? Why hunt through Docker Desktop when agents can inspect containers with native commands? The terminal doesn't get in the way.
+
+**Power User Tools**: With neovim, fzf, and tmux, I'm bringing a lot of what I loved about VSCode into the terminal—but with vim motions and split-screen workflows that make me feel like I have superpowers. I'm still discovering what's possible.
+
+## What This Means for Development Teams
+
+We're witnessing a fundamental shift from individual AI assistance to collaborative agent workflows. The progression from autocomplete to agents isn't just about better AI—it's about better integration with how development actually works.
+
+Teams are moving from "developer with AI help" to "developer orchestrating AI teams." The planning and review workflow I described isn't just personal preference—it's the emerging standard for high-velocity development. When agents handle implementation, testing, and documentation, humans can focus on architecture, user experience, and business logic.
+
+GUI tools will always have their place for learning and exploration. But for production workflows, for managing complex agent interactions, for automating entire development pipelines, the terminal isn't just better—it's essential.
+
+The irony isn't lost on me. Codeium, my first AI coding tool, is now Windsurf—a GUI IDE competing with Cursor. Meanwhile, I've come full circle, back to the terminal I once avoided, but with capabilities we couldn't have imagined in 2021.
+
+## The Future is Already Here
+
+As I write this, I have agents handling three different projects simultaneously. One is refactoring legacy code I've been avoiding for months. Another is generating comprehensive documentation for a client handoff. A third is setting up CI/CD pipelines for a new repository.
+
+None of this requires my direct intervention. They're working from planning docs I created, following standards I've documented, using patterns they've learned from previous projects.
+
+And this is just the beginning. I'm experimenting with specialized agents—a QA agent that knows our testing standards, a GitOps agent that handles our deployment workflow, an AWS agent that manages our infrastructure queries. Instead of one generalist AI trying to do everything, I have specialists that understand specific domains deeply.
+
+I'm starting to feel like the computer in Star Trek isn't even that cool with Claude around. The Enterprise crew had to walk to terminals and speak their requests aloud. I have specialized agents in my terminal, learning my patterns, following my documentation, improving my workflows continuously.
+
+This isn't the future of development—it's the present. While most developers are still fighting with context windows and prompt management, those of us in the terminal are quietly building faster, better, and more reliably than ever.
+
+## What's Next?
+
+The terminal renaissance isn't about nostalgia. It's about recognizing that sometimes, the old ways were limited by technology, not design. Now that the technology has caught up, the terminal's simplicity enables complexity that GUIs can only dream of.
+
+What comes next? I'm experimenting with agent swarms for complex architecture decisions. I'm building documentation that teaches agents not just what to code, but how to think about problems. I'm creating workflows where agents collaborate across different repositories, different tech stacks, different phases of the development lifecycle.
+
+The terminal I once avoided has become my command center for orchestrating the future of software development.
+
+Welcome back to the command line. It's not what you remember—it's better.
+
+---
