@@ -14,6 +14,38 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "BTS Infrastructure Platform",
+    description: "Production Kubernetes platform on bare-metal Proxmox, fully managed via GitOps from a single Git repository.",
+    longDescription: "Designed and built a production-grade Kubernetes platform running on a 3-node Proxmox cluster. The entire stack is declaratively managed via Flux CD GitOps, with infrastructure-as-code for VM provisioning and SOPS/age encryption for secrets. Supports self-hosted GitLab CI/CD, Vaultwarden, PostgreSQL, S3-compatible object storage, and a full observability stack.",
+    technologies: [
+      "Kubernetes",
+      "Talos Linux",
+      "Proxmox",
+      "Flux CD",
+      "Terraform/CDKTF",
+      "Helm",
+      "SOPS/age",
+      "MetalLB",
+      "Traefik",
+      "Longhorn",
+      "CloudNativePG",
+      "Prometheus",
+      "Grafana"
+    ],
+    category: "Platform Engineering",
+    status: "Live",
+    github: "https://github.com/bwads001/bts-infra",
+    highlights: [
+      "7-node Talos Linux Kubernetes cluster with 3 HA control planes across 3 bare-metal Proxmox hosts",
+      "Full GitOps pipeline: Flux CD syncing HelmReleases from Git with SOPS/age secret encryption",
+      "Infrastructure-as-code: CDKTF/Terraform for VM provisioning with cloud-init automation",
+      "Self-hosted services: GitLab CE, Vaultwarden, MinIO, CloudNativePG PostgreSQL",
+      "Complete observability: Prometheus, Grafana, Alertmanager with persistent storage",
+      "Automated disaster recovery: entire platform rebuildable from Git in under 1 hour"
+    ],
+    period: "2025 - Present"
+  },
+  {
     title: "Bespoke Tech Solutions",
     description: "Enterprise-grade software development company providing custom solutions for businesses of all sizes.",
     longDescription: "Leading the technical architecture and development for a full-service software development company. Built the company website, established development workflows, and implemented AI-driven solutions for clients.",
@@ -79,7 +111,7 @@ export const projects: Project[] = [
     category: "Web Development",
     status: "Live",
     url: "https://bryanwadsworth.com",
-    github: "https://github.com/your-username/resume-app", // TODO: Update with actual repo
+    github: "https://github.com/bwads001/resume-app",
     image: "/images/bryan-wadsworth-resume.png",
     highlights: [
       "Dynamic PDF generation from structured data using React PDF",

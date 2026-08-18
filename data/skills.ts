@@ -1,26 +1,24 @@
-export const skills = {
-    "Full Stack Development": [
+export const skills: Record<string, string[]> = {
+    "Languages & Frameworks": [
         "JavaScript",
         "TypeScript",
         "Python",
-        "Node.js",
-        "Vite",
-        "React",
-        "Next.js",
-        "REST APIs",
-        "GraphQL",
-        "Express",
+        "Go",
         "C#",
         "PHP",
-        "Go",
-    ],
-    "UI Development & Tooling": [
+        "Node.js",
+        "React",
+        "Next.js",
+        "Vite",
+        "Express",
+        "REST APIs",
+        "GraphQL",
         "Tailwind CSS",
         "Shadcn",
         "Storybook",
         "v0.dev",
     ],
-    "Mobile Development": [ 
+    "Mobile Development": [
         "React Native",
         "Expo",
         "AdMob",
@@ -32,7 +30,7 @@ export const skills = {
         "Unity",
         "Unreal Engine",
     ],
-    "Databases & Data Management": [
+    "Databases & Messaging": [
         "PostgreSQL",
         "MySQL",
         "MariaDB",
@@ -46,7 +44,7 @@ export const skills = {
         "RabbitMQ",
         "Kafka",
     ],
-    "Cloud Platforms & Infrastructure": [
+    "Infrastructure & Cloud": [
         "AWS EC2",
         "Google Cloud Platform",
         "Vercel",
@@ -55,31 +53,38 @@ export const skills = {
         "Docker",
         "Kubernetes",
         "OpenStack",
-    ],
-    "DevOps & Platform Engineering": [
-        "GitHub Actions",
-        "CI/CD Pipelines",
-        "Docker",
-        "Kubernetes",
-        "Sentry",
-        "BetterStack",
-        "PostHog",
-    ],
-    "Server & System Administration": [
-        "Linux (AlmaLinux, Debian, Ubuntu)",
+        "Proxmox",
+        "Talos Linux",
+        "Terraform/CDKTF",
+        "Linux (Arch, AlmaLinux, Debian, Ubuntu)",
         "Apache",
         "Nginx",
-        "cPanel",
-    ],
-    "Data Storage & File Management": [
         "AWS S3",
+        "MinIO",
         "Google Cloud Storage",
         "Cloudflare R2",
         "Supabase Storage",
         "Vercel Blob",
         "UploadThing",
     ],
-    "SaaS Platforms & Integrations": [
+    "DevOps & GitOps": [
+        "GitHub Actions",
+        "GitLab CI/CD",
+        "CI/CD Pipelines",
+        "Flux CD",
+        "GitOps",
+        "Helm",
+        "MetalLB",
+        "Traefik",
+        "Longhorn",
+        "SOPS/age",
+        "Prometheus",
+        "Grafana",
+        "Sentry",
+        "BetterStack",
+        "PostHog",
+    ],
+    "SaaS & Integrations": [
         "Jira",
         "Jira Service Desk",
         "Confluence",
@@ -92,7 +97,7 @@ export const skills = {
         "Stripe",
         "SendGrid",
         "Zapier",
-        "n8n",        
+        "n8n",
     ],
     "AI & Machine Learning": [
         "OpenAI",
@@ -107,6 +112,6 @@ export const skills = {
         "ElevenLabs",
         "OpenAI Realtime API",
         "SesameCSM",
-        "AI Agents"
+        "AI Agents",
     ],
-}; 
+};
