@@ -13,10 +13,11 @@ export const jobs: Job[] = [
     period: "08/2023 - Present",
     description: [
       "Guiding software development processes in a startup environment, leveraging my experience in platform engineering and new AI-driven development workflows.",
-      "Implementing automated CI/CD pipelines on AWS and GCP with AI enhancements to streamline development, perform intelligent code review, automate testing, and enable smart deployment strategies.",
+      "Designed and operate a production Kubernetes platform on bare-metal Proxmox infrastructure (Talos Linux, 7-node HA cluster) with full GitOps delivery via Flux CD, SOPS-encrypted secrets, and automated TLS certificate management.",
+      "Built infrastructure-as-code pipelines using CDKTF/Terraform for VM provisioning, with Longhorn distributed storage, CloudNativePG for PostgreSQL, MetalLB load balancing, and a complete observability stack (Prometheus, Grafana, Alertmanager).",
+      "Implementing automated CI/CD pipelines with self-hosted GitLab CE, container registry, and AI enhancements to streamline development, perform intelligent code review, automate testing, and enable smart deployment strategies.",
       "Integrating AI tools and frameworks into development processes, including code generation, automated testing, performance optimization, and intelligent debugging across all project types.",
-      "Crafting solutions using modern tech stacks enhanced with AI capabilities for diverse projects, including business apps, mobile apps, websites, and games.",
-      "Managing platform engineering while expanding responsibilities to encompass broader technology strategy, AI implementation, and intelligent automation across all business processes."
+      "Crafting solutions using modern tech stacks enhanced with AI capabilities for diverse projects, including business apps, mobile apps, websites, and games."
     ],
     url: "https://mybts.io/"
   },
